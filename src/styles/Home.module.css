@@ -1,0 +1,38 @@
+/* src/styles/Home.module.css */
+.homeContainer {
+    padding: 20px;
+    text-align: center;
+  }
+  .principalContainer{
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+  }
+  
+  .equipo {
+    background-color: white;
+    border: solid 2px #76bdfc;
+    margin: 5% auto;
+    padding: 2%;
+    border-radius: 5%;
+    cursor: pointer;
+    text-align: center;
+    width: 120px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .equipo:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .image {
+    width: 80%;
+    margin-bottom: 8px;
+  }
+  
+  .equipoName {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
