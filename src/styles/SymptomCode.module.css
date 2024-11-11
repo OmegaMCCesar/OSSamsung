@@ -1,23 +1,17 @@
-/* src/styles/SymptomCode.module.css */
-.symptomCodeContainer {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .symptomsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .symptom {
-    cursor: pointer;
-    padding: 10px;
-    margin: 5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 200px;
-    text-align: center;
-  }
-  
-  
+.container {
+  text-align: center;
+}
+.option {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #000;
+  margin: 10px auto;
+  width: 50%;
+
+}
+
+textarea{
+  width: 90%;
+  padding: 2vh;
+  margin: 1vh auto;
+}

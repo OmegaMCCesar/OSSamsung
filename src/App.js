@@ -1,72 +1,80 @@
 // src/App.js
 import React, { useState } from 'react';
-import PartSelection from './components/PartSelection';
-import SymptomCode from './components/SymptomCode';
-import InterimCode from './components/InterimCode';
+import House from './components/House.js';
+import BlockSelection from './components/BlockSelection';
+import SymptomBlock from './components/SymptomBlock';
+import SubSymptom from './components/SubSymptom';
 import RepairCode from './components/RepairCode';
-import FinalOptions from './components/FinalOptions';
-import SelectionSummary from './components/SelectionSummary';
+import FinalRepairOptions from './components/FinalRepairOptions';
+import FinalSummary from './components/FinalSummary';
 import BackToHomeButton from './components/BackToHomeButton';
-import HomeO from './components/HomeO';
 
 function App() {
   const [selections, setSelections] = useState({
     equipment: null,
-    part: null,
-    symptom: null,
-    interim: null,
-    repair: null,
-    final: null,
+    block: null,
+    symptomBlock: null,
+    subSymptom: null,
+    repairCode: null,
+    finalRepair: null,
   });
+  const [showFinalSummary, setShowFinalSummary] = useState(false);
 
   const handleSelectEquipment = (equipment) => {
-    setSelections({ equipment, part: null, symptom: null, interim: null, repair: null, final: null });
+    setSelections({ equipment, block: null, symptomBlock: null, subSymptom: null, repairCode: null, finalRepair: null });
+    setShowFinalSummary(false);
   };
 
-  const handleSelectPart = (part) => {
-    setSelections((prev) => ({ ...prev, part }));
+  const handleSelectBlock = (block) => {
+    setSelections((prev) => ({ ...prev, block }));
   };
 
-  const handleSelectSymptom = (symptom) => {
-    setSelections((prev) => ({ ...prev, symptom }));
+  const handleSelectSymptomBlock = (symptomBlock) => {
+    setSelections((prev) => ({ ...prev, symptomBlock }));
   };
 
-  const handleSelectInterim = (interim) => {
-    setSelections((prev) => ({ ...prev, interim }));
+  const handleSelectSubSymptom = (subSymptom) => {
+    setSelections((prev) => ({ ...prev, subSymptom }));
   };
 
-  const handleSelectRepair = (repair) => {
-    setSelections((prev) => ({ ...prev, repair }));
+  const handleSelectRepairCode = (repairCode) => {
+    setSelections((prev) => ({ ...prev, repairCode }));
   };
 
-  const handleSelectFinal = (final) => {
-    setSelections((prev) => ({ ...prev, final }));
+  const handleSelectFinalRepair = (finalRepair) => {
+    setSelections((prev) => ({ ...prev, finalRepair }));
+    setShowFinalSummary(true); // Mostrar el resumen final al completar el flujo
   };
 
   const handleBackToHome = () => {
-    setSelections({ equipment: null, part: null, symptom: null, interim: null, repair: null, final: null });
+    setSelections({ equipment: null, block: null, symptomBlock: null, subSymptom: null, repairCode: null, finalRepair: null });
+    setShowFinalSummary(false);
   };
 
   return (
     <div>
-      <SelectionSummary selections={selections} />
-      {!selections.equipment && (
-        <HomeO onSelect={handleSelectEquipment} />
+      {!showFinalSummary && (
+        <>
+          {!selections.equipment && <House onSelect={handleSelectEquipment} />}
+          {selections.equipment && !selections.block && (
+            <BlockSelection selectedEquipment={selections.equipment} onBlockSelect={handleSelectBlock} />
+          )}
+          {selections.block && !selections.symptomBlock && (
+            <SymptomBlock selectedBlock={selections.block} onSymptomSelect={handleSelectSymptomBlock} />
+          )}
+          {selections.symptomBlock && !selections.subSymptom && (
+            <SubSymptom selectedSymptom={selections.symptomBlock} onSubSymptomSelect={handleSelectSubSymptom} />
+          )}
+          {selections.subSymptom && !selections.repairCode && (
+            <RepairCode selectedSubSymptom={selections.subSymptom} onRepairSelect={handleSelectRepairCode} />
+          )}
+          {selections.repairCode && !selections.finalRepair && (
+            <FinalRepairOptions selectedRepairCode={selections.repairCode} onFinalSelect={handleSelectFinalRepair} />
+          )}
+        </>
       )}
-      {selections.equipment && !selections.part && (
-        <PartSelection selectedEquipment={selections.equipment} onPartSelect={handleSelectPart} />
-      )}
-      {selections.part && !selections.symptom && (
-        <SymptomCode onSymptomSelect={handleSelectSymptom} />
-      )}
-      {selections.symptom && !selections.interim && (
-        <InterimCode selectedSymptom={selections.symptom} onInterimSelect={handleSelectInterim} />
-      )}
-      {selections.interim && !selections.repair && (
-        <RepairCode selectedSymptom={selections.symptom} onRepairSelect={handleSelectRepair} />
-      )}
-      {selections.repair && (
-        <FinalOptions selectedRepair={selections.repair} onFinalSelect={handleSelectFinal} />
+      {showFinalSummary && (
+        <FinalSummary selections={selections} onBackToHome={handleBackToHome} />
       )}
       <BackToHomeButton onBackToHome={handleBackToHome} />
     </div>
@@ -74,6 +82,10 @@ function App() {
 }
 
 export default App;
+
+
+
+
 
 
 

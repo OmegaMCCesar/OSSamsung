@@ -1,0 +1,27 @@
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+  }
+  
+  .summaryList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .summaryList li {
+    margin-bottom: 10px;
+  }
+  
+  .backButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  

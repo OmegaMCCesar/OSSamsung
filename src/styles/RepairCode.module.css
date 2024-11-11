@@ -1,23 +1,12 @@
-/* src/styles/RepairCode.module.css */
-.repairCodeContainer {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .repairOptionsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .repair {
-    cursor: pointer;
-    padding: 10px;
-    margin: 5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 200px;
-    text-align: center;
-  }
+.container {
+  text-align: center;
+}
+.option {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #000;
+  margin: 10px;
+}
+
   
   
