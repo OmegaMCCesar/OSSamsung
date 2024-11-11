@@ -14,7 +14,6 @@
     padding: 10px;
     border: 1px solid #000;
     margin: 10px;
-    width: 200px;
     text-align: center;
     border-radius: 5%;
   }
@@ -39,18 +38,28 @@
   /* Configuracion para celulares */
   @media (max-width:480px){
 
+    .container{
+      width: 100%;
+      align-items: center;
+      padding: 1vh;
+    }
+
     .subContainer{
       display: flex;
       flex-direction: column;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
     }
 
     h2{
+      width: 100%;
       font-size: 100%;
     }
 
     .option{
-      margin: 5% auto;
-      width: 150%;
+      margin: 3%,auto;
+      width: 70%;
     }
 
 
