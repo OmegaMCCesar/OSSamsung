@@ -4,6 +4,7 @@ import styles from '../styles/FinalRepairOptions.module.css';
 
 const FinalRepairOptions = ({ selectedRepairCode, onFinalSelect }) => {
   const finalOptions = {
+    'SRC000-CAMBIO DE PIEZA(COMPRESSOR)':['A15-REMPLAZO DE COMPRESSOR'],
     'SRC008-OTROS PROBLEMAS':['X09-NEGATIVA DE REPARACION'],
     'Cambio de pieza': ['Cambio de compresor', 'Cambio de motor'],
     'Lubricación': ['Aplicación de lubricante', 'Cambio de lubricante'],

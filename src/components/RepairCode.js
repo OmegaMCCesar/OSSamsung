@@ -5,6 +5,9 @@ import styles from '../styles/RepairCode.module.css';
 const RepairCode = ({ selectedSubSymptom, onRepairSelect }) => {
   const repairOptions = {
     'HK1-RUIDO DE MOTOR':['SRC008-OTROS PROBLEMAS'],
+    'HLC-NO FUNCIONA EL COMPRESSOR':['SRC000-CAMBIO DE PIEZA(COMPRESSOR)'],
+    'HL1-ENCIENDE, PERO NO OPERA(COMPRESSOR)':['SRC000-CAMBIO DE PIEZA(COMPRESSOR)'],
+    'HL2-OPERACION INTERMITENTE(COMPRESSOR)':['SRC000-CAMBIO DE PIEZA(COMPRESSOR)'],
     'No funciona': ['Cambio de pieza', 'Lubricación'],
     'Obstrucción': ['Parcial', 'Completa'],
     'Ruido': ['Ajuste de componentes', 'Lubricación'],
