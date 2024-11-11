@@ -28,3 +28,30 @@
     width: 50%;
   }
   
+
+  /*Configuracion para tabletas */
+  @media (max-width:768px) {
+    .option{
+      width: 60%;
+    }
+  }
+
+  /* Configuracion para celulares */
+  @media (max-width:480px){
+
+    .subContainer{
+      display: flex;
+      flex-direction: column;
+    }
+
+    h2{
+      font-size: 80%;
+    }
+
+    .option{
+      margin: 5% auto;
+      width: 100%;
+    }
+
+
+  }
