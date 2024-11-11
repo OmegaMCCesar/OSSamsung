@@ -12,6 +12,7 @@ const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
     '4B05-CONDENSER':[{simtom:'HE2-ENFRIAMIENTO POBRE',description:'Usaremos este codigo cuando el refrigerador presenta frio, aun sea muy poco, tecnico tiene que verificar cual es la causa por la cual refrigerador no enfria con la potencia adecuada'},{simtom:'SRC022-FUGA/FUGA',description:''}],
     '4C05-EVAPORATOR':[{simtom:'SRC022-FUGA/FUGA',description:''}],
     '4B09-GAS LEAKAGE':[{simtom:'SRC022-FUGA/FUGA(GAS LEAKAGE)',description:''}],
+    '4C08-AMBIENT SENSOR(ELECTRONIC)':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION(SENSOR eLECTRONIC)',description:'Usamos este codigo cuado tenemos un enfriamento pobre o sobre enfriamiento, ya que los sensores termistores ya no marcan una lectura correcta de la temperatura hambiente'}],
     Motor: ['No gira', 'Vibración'],
     Transmisión: ['Desgaste', 'Falla mecánica'],
     Encendido: ['Chispa débil', 'No enciende'],
