@@ -4,22 +4,32 @@
 .option {
   cursor: pointer;
   padding: 10px;
-  border: 1px solid #000;
+  border-radius: 3%;
+  border: 1px solid hsl(0, 0%, 0%);
   margin: 10px auto;
   width: 50%;
 
 }
 
 textarea{
-  width: 90%;
+  width: 95%;
   padding: 2vh;
   margin: 1vh auto;
 }
 
 @media (max-width:450px){
-  
+   
+  .option{
+    width: 80%;
+    margin: 5% auto;
+  }
+
   p{
     font-size: 80%;
+  }
+
+  textarea{
+    width: 90%;
   }
 
 }
