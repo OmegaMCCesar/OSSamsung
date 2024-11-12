@@ -26,7 +26,7 @@
   }
 
   .imgU{
-    width: 100%;
+    width: 95%;
     margin: 5% auto;
   }
   
@@ -58,12 +58,18 @@
     h2{
       width: 100%;
       font-size: 100%;
+      text-align: center;
     }
 
     .option{
       margin: 3%,auto;
-      width: 40%;
+      width: 35%;
+      height: 20vh;
     }
-
+     
+    img{
+      height: 15vh;
+      background-color: aquamarine;
+    }
 
   }
