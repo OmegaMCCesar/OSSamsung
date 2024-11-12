@@ -11,7 +11,7 @@ const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
     '4B04-COMPRESSOR FAN MOTOR(CIRCUIT MOTOR)':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION',description:'Uso de este codigo cuando el ventilador tiene un problema mecanico o electrico '}],
     '4B05-CONDENSER':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION(CONDENSER)',description:'Si el condensador se encuentra sin servicio, demasiado lleno de suciedad, pelusa o algun material que impida el correcto flujo de aire para la extraccion de calor, nos dara un enfriamientio tenue'},{simtom:'SRC022-FUGA/FUGA',description:'Cualquier perdida de gas es considerada fuga de refrigerante, en este caso es en latuberia de condensador'}],
     '4C05-EVAPORATOR':[{simtom:'SRC022-FUGA/FUGA',description:'Cualquier perdida de gas por desgaste del condensador es considerada fuga de gas'}],
-    '4B09-GAS LEAKAGE':[{simtom:'SRC022-FUGA/FUGA(GAS LEAKAGE)',description:''}],
+    '4B09-GAS LEAKAGE':[{simtom:'SRC022-FUGA/FUGA(GAS LEAKAGE)',description:'Cualquier fuga que pueda ser reparada en la cual no se cambia piezas, a excepcion de dryer es gas leakage'}],
     '4C08-AMBIENT SENSOR(ELECTRONIC)':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION(SENSOR ELECTRONIC)',description:'Usamos este codigo cuado tenemos un enfriamento pobre o sobre enfriamiento, ya que los sensores termistores ya no marcan una lectura correcta de la temperatura hambiente'}],
     'BR13-WATER VALVE(ICE/WATER)':[{simtom:'SRC029-PROVEDOR DE AGUA',description:''}],
     'BR07-ICE MAKER':[{simtom:'SRC013-PROBLEMAS DE OPERACION',description:''}],

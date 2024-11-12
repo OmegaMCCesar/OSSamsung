@@ -15,6 +15,7 @@ const RepairCode = ({ selectedSubSymptom, onRepairSelect }) => {
     'HXB-CONEXION DE CABLE INCORRECTA':['SRC008-OTROS PROBLEMAS'],
     'HE2-ENFRIAMIENTO POBRE':['SRC000-CAMBIO DE PIEZA ','SRC008-OTROS PROBLEMAS '],
     'HE2-ENFRIAMIENTO POBRE(CONDENSER)':['SRC000-CAMBIO DE PIEZA(CONDENSER)'],
+    'HE9-FUGA DE GAS(GAS LEAKAGE)':['SRC001-REPARAR(GAS LEAKAGE)'],
     'HE9-FUGA DE GAS':['SRC000-CAMBIO DE PIEZA(CONDENSER)'],
     'No funciona': ['Cambio de pieza', 'Lubricación'],
     'Obstrucción': ['Parcial', 'Completa'],
