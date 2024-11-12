@@ -40,3 +40,24 @@
     height: 20vh;
   }
   
+  @media(max-width:450px){
+
+    .containerBlock{
+      justify-content: space-evenly;
+    }
+
+    .option{
+      width: 30%;
+      height: 20vh;
+    }
+
+    img{
+      height: 10vh;
+    }
+
+    p{
+      width: 20vh;
+      font-size: small;
+    }
+
+  }
