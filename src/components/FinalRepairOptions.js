@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from '../styles/FinalRepairOptions.module.css';
 
+
 const FinalRepairOptions = ({ selectedRepairCode, onFinalSelect }) => {
   const finalOptions = {
     'SRC000-CAMBIO DE PIEZA(IM)':['A01-REMPLAZO DE PARTES ELECTRICAS'],
@@ -31,7 +32,7 @@ const FinalRepairOptions = ({ selectedRepairCode, onFinalSelect }) => {
       {options ? (
         options.map((finalOption) => (
           <div key={finalOption} onClick={() => onFinalSelect(finalOption)} className={styles.option}>
-            <p>{finalOption}</p>
+            <button >{finalOption}</button>
           </div>
         ))
       ) : (

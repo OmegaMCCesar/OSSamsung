@@ -1,6 +1,7 @@
 // src/components/RepairCode.js
 import React from 'react';
 import styles from '../styles/RepairCode.module.css';
+import styles2 from '../styles/BackToHomeButton.module.css';
 
 const RepairCode = ({ selectedSubSymptom, onRepairSelect }) => {
   const repairOptions = {
@@ -34,7 +35,7 @@ const RepairCode = ({ selectedSubSymptom, onRepairSelect }) => {
       {options ? (
         options.map((repairOption) => (
           <div key={repairOption} onClick={() => onRepairSelect(repairOption)} className={styles.option}>
-            <p>{repairOption}</p>
+            <button >{repairOption}</button>
           </div>
         ))
       ) : (

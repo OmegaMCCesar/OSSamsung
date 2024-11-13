@@ -1,6 +1,7 @@
 // src/components/SubSymptom.js
 import React from 'react';
 import styles from '../styles/SubSymptom.module.css';
+import styles2 from '../styles/BackToHomeButton.module.css';
 
 const SubSymptom = ({ selectedSymptom, onSubSymptomSelect }) => {
   const subSymptoms = {
@@ -31,7 +32,7 @@ const SubSymptom = ({ selectedSymptom, onSubSymptomSelect }) => {
       <h2>Seleccione el sub-síntoma para {selectedSymptom}</h2>
       {subSymptoms[selectedSymptom].map((subSymptom) => (
         <div key={subSymptom} onClick={() => onSubSymptomSelect(subSymptom)} className={styles.option}>
-          <p>{subSymptom}</p>
+          <button >{subSymptom}</button>
         </div>
       ))}
     </div>

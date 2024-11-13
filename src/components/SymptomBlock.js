@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from '../styles/SymptomCode.module.css';
 
+
 const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
   const symptomBlocks = {
     '4B01-COMPRESSOR':[{simtom:'SRC015-RUIDO',description:'Usar este codigo cuando el motor presenta un sonido anomalo'},{simtom:'SRC013-PROBLEMAS DE OPERACION(COMPRESSOR)', description:'Usamos este codigo cuando el motor no funciona correctamente, puede ser el compresor dañado, mal conectado o alguna razon por la cual el compresor no puede trabajar de manera adecuada'}],
@@ -26,7 +27,7 @@ const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
       <h2>Seleccione el bloque de síntoma para {selectedBlock}</h2>
       {symptomBlocks[selectedBlock].map((symptom) => (
         <div key={symptom.simtom}  className={styles.option}>
-          <p onClick={() => onSymptomSelect(symptom.simtom)} >{symptom.simtom}</p>
+          <button onClick={() => onSymptomSelect(symptom.simtom)} >{symptom.simtom}</button>
           <textarea readOnly>{symptom.description}</textarea>
         </div>       
       ))}
