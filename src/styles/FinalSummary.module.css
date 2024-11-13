@@ -4,14 +4,19 @@
     padding: 20px;
     background-color: hwb(0 100% 0%);
     border: 3px solid hsl(0, 0%, 0%);
-    margin: 10px;
+    margin: 10px auto;
     border-radius: 2%; 
-    width: 76%;
+    width: 80%;
   }
   
   .summaryList {
     list-style-type: none;
+    text-align: center;
     padding: 0;
+  }
+
+  li{
+    font-size: small;
   }
   
   .summaryList li {
