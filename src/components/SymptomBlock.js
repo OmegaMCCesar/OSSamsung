@@ -13,8 +13,8 @@ const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
     '4C05-EVAPORATOR':[{simtom:'SRC022-FUGA/FUGA',description:'Cualquier perdida de gas por desgaste del condensador es considerada fuga de gas'}],
     '4B09-GAS LEAKAGE':[{simtom:'SRC022-FUGA/FUGA(GAS LEAKAGE)',description:'Cualquier fuga que pueda ser reparada en la cual no se cambia piezas, a excepcion de dryer es gas leakage'}],
     '4C08-AMBIENT SENSOR(ELECTRONIC)':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION(SENSOR ELECTRONIC)',description:'Usamos este codigo cuado tenemos un enfriamento pobre o sobre enfriamiento, ya que los sensores termistores ya no marcan una lectura correcta de la temperatura hambiente'}],
-    'BR13-WATER VALVE(ICE/WATER)':[{simtom:'SRC029-PROVEDOR DE AGUA',description:''}],
-    'BR07-ICE MAKER':[{simtom:'SRC013-PROBLEMAS DE OPERACION',description:''}],
+    'BR13-WATER VALVE(ICE/WATER)':[{simtom:'SRC029-PROVEDOR DE AGUA',description:'Cuando la fabrica de hielos no hace hielos o el refrigerador no despacha agua, puede ser sintoma de valvulas dañadas, una vez cambiando la pieza usaremos este codigo'}],
+    'BR07-ICE MAKER':[{simtom:'SRC013-PROBLEMAS DE OPERACION(IM)',description:'Usamos este codigo ya revisamos los demas componentes involucrados para la fabricacion de hielos, y se cambia la ice maker'}],
     Motor: ['No gira', 'Vibración'],
     Transmisión: ['Desgaste', 'Falla mecánica'],
     Encendido: ['Chispa débil', 'No enciende'],
@@ -27,7 +27,7 @@ const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
       {symptomBlocks[selectedBlock].map((symptom) => (
         <div key={symptom.simtom}  className={styles.option}>
           <p onClick={() => onSymptomSelect(symptom.simtom)} >{symptom.simtom}</p>
-          <textarea>{symptom.description}</textarea>
+          <textarea readOnly>{symptom.description}</textarea>
         </div>       
       ))}
     </div>
