@@ -5,7 +5,7 @@ import styles from '../styles/FinalSummary.module.css';
 const FinalSummary = ({ selections, onBackToHome }) => {
   return (
     <div className={styles.container}>
-      <h2>Resumen Final de Selección</h2>
+      <h2>Resumen Final de Cierre</h2>
       <ul className={styles.summaryList}>
         <li><strong>Equipo seleccionado:</strong> {selections.equipment}</li>
         <li><strong>Bloque de código seleccionado:</strong> {selections.block}</li>
@@ -14,7 +14,7 @@ const FinalSummary = ({ selections, onBackToHome }) => {
         <li><strong>Código de reparación seleccionado:</strong> {selections.repairCode}</li>
         <li><strong>Opción final de reparación:</strong> {selections.finalRepair}</li>
       </ul>
-      <button className={styles.backButton} onClick={onBackToHome}>Volver al Inicio</button>
+      <hr/>
     </div>
   );
 };

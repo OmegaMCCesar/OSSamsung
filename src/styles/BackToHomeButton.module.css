@@ -18,4 +18,11 @@
   .backButton:hover {
     background-color: #0056b3;
   }
+
+  @media(max-width:450px){
+    .backButton{
+      width: 12vh;
+      font-size: 0.6rem;
+    }
+  }
   
