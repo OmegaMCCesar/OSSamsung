@@ -1,7 +1,7 @@
 // src/components/RepairCode.js
 import React from 'react';
 import styles from '../styles/RepairCode.module.css';
-import styles2 from '../styles/BackToHomeButton.module.css';
+
 
 const RepairCode = ({ selectedSubSymptom, onRepairSelect }) => {
   const repairOptions = {
@@ -18,8 +18,10 @@ const RepairCode = ({ selectedSubSymptom, onRepairSelect }) => {
     'HE2-ENFRIAMIENTO POBRE':['SRC000-CAMBIO DE PIEZA ','SRC008-OTROS PROBLEMAS '],
     'HE2-ENFRIAMIENTO POBRE(CONDENSER)':['SRC000-CAMBIO DE PIEZA(CONDENSER)'],
     'HE2-ENFRIAMINETO POBRE(SENSOR ELECTRONIC)':['SRC000-CAMBIO DE PIEZA(SENSOR ELECTRONIC)'],
+    'HE3-ENFRIAMIENTO EXCESIVO(RT31)':['SRC001-REPARAR(RT31)'],
     'HE9-FUGA DE GAS(GAS LEAKAGE)':['SRC001-REPARAR(GAS LEAKAGE)'],
     'HE9-FUGA DE GAS':['SRC000-CAMBIO DE PIEZA(CONDENSER)'],
+    'HE9-FUGA DE GAS**':['SRC001-REPARAR**'],
     'HG2-SIN SUMINISTRO DE AGUA':['SRC000-CAMBIO DE PIEZA(V)'],
     'No funciona': ['Cambio de pieza', 'Lubricación'],
     'Obstrucción': ['Parcial', 'Completa'],

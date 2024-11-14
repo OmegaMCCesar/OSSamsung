@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+    width: 20%;
+}
+
+.buttonSearcher{
+   width: 100%;
+}
+
+.buttonSearcher:hover{
+  background-color: #00bfff;
+}
+
+button{
+    margin: 2%;
+}
+
+input{
+    height: 100%;
+    padding: 0.6vh;
+}

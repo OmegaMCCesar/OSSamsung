@@ -1,10 +1,11 @@
 .container {
+  border: none;
     text-align: center;
   }
   .option {
+    border: none;
     cursor: pointer;
     padding: 10px;
-    border: 1px solid #000;
     margin: 10px;
   }
   
