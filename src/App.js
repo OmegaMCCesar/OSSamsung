@@ -18,6 +18,7 @@ function App() {
     repairCode: null,
     finalRepair: null,
   });
+  
   const [showFinalSummary, setShowFinalSummary] = useState(false);
 
   const handleSelectEquipment = (equipment) => {

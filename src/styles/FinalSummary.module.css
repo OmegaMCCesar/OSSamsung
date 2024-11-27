@@ -33,3 +33,8 @@
     border-radius: 5px;
   }
   
+  li {
+    display: flex;
+    text-align: end;
+    margin-left: 30%;
+  }

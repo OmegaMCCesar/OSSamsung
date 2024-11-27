@@ -5,6 +5,9 @@ import styles from '../styles/FinalRepairOptions.module.css';
 
 const FinalRepairOptions = ({ selectedRepairCode, onFinalSelect }) => {
   const finalOptions = {
+    'SRC000-CAMBIO DE PIEZA(p)':['A01-REMPLAZO DE PARTES ELECTRICAS'],
+    'SRC000-CAMBIO DE PIEZA(S/W)':['A01-REMPLAZO DE PARTES ELECTRICAS'],
+    'SRC000-CAMBIO DE PIEZA(DOOR)':['A02-REMPLAZO DE PARTES MECANICAS'],
     'SRC000-CAMBIO DE PIEZA(IM)':['A01-REMPLAZO DE PARTES ELECTRICAS'],
     'SRC000-CAMBIO DE PIEZA(SENSOR ELECTRONIC)':['A17-REEMPLAZO DE SENSOR'],
     'SRC000-CAMBIO DE PIEZA(V)':['A01-REMPLAZO DE PARTES ELECTRICAS'],
@@ -19,6 +22,7 @@ const FinalRepairOptions = ({ selectedRepairCode, onFinalSelect }) => {
     'SRC001-REPARAR(RT31)':['M99-OTRA REPARACION'],
     'SRC001-REPARAR(GAS LEAKAGE)':['A13-AGREGAR REFRIGERANTE'],
     'SRC001-REPARAR**':['A13-AGREGAR REFRIGERANTE'],
+    'SRC002-AJUSTE/ALINEACION/CONFIGURACION*':['M09-AJUSTE'],
     'Cambio de pieza': ['Cambio de compresor', 'Cambio de motor'],
     'Lubricación': ['Aplicación de lubricante', 'Cambio de lubricante'],
     'Reparación de conexiones': ['Reconexión de cables', 'Cambio de conexiones'],

@@ -2,19 +2,23 @@
 import React from 'react';
 import styles from '../styles/FinalSummary.module.css';
 
-const FinalSummary = ({ selections, onBackToHome }) => {
+const FinalSummary = ({ selections }) => {
   return (
     <div className={styles.container}>
       <h2>Resumen Final de Cierre</h2>
       <ul className={styles.summaryList}>
         <li><strong>Equipo seleccionado:</strong> {selections.equipment}</li>
-        <li><strong>Bloque de código seleccionado:</strong> {selections.block}</li>
-        <li><strong>Bloque de síntoma seleccionado:</strong> {selections.symptomBlock}</li>
-        <li><strong>Sub-síntoma seleccionado:</strong> {selections.subSymptom}</li>
-        <li><strong>Código de reparación seleccionado:</strong> {selections.repairCode}</li>
-        <li><strong>Opción final de reparación:</strong> {selections.finalRepair}</li>
+        <li><strong>Bloque de defecto:</strong> {selections.block}</li>
+        <li><strong>Codigo de síntoma:</strong> {selections.symptomBlock}</li>
+        <li>{selections.subSymptom}</li>
+        <li><strong>Código de reparación:</strong> {selections.repairCode}</li>
+        <li>{selections.finalRepair}</li>
       </ul>
       <hr/>
+       {selections.finalRepair === 'M09-AJUSTE' && <div>
+          <h3>Proceso correcto del cierre de boletin RT5300 , RT6300</h3>   
+           <p>Una vez agregados los codigos correctos generaremos la saw para el extra de pago en mano<br/>de esta forma se pagara 200 mas 160 de la extra saw, es necesario subir toda la informacion<br/>solicitada, El RT adjunto, evidencia de que se utilizo la camara endoscopica y la saw indicando<br/>"Pago de extra mano, aplicacion de service boletin"  </p>    
+        </div>}
     </div>
   );
 };
