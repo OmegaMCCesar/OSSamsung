@@ -5,7 +5,12 @@ import styles from '../styles/SymptomCode.module.css';
 
 const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
   const symptomBlocks = {
+    '5F03-MOTOR-FAN':[{simtom:'SRC030-PROBLEMA DE ROTACION(MF)',description:'Si esta pieza falla nos dara un problema en el secado'}],
+    '5E11-DAMPER ':[{simtom:'SRC030-PROBLEMA DE ROTACION(D)',description:'Movimientos de la lavadora excesivo, vibracion, golpeteos de lamina, pueden ser problemas de dampers'}],
+    '5E11-DAMPER':[{simtom:'SRC030-PROBLEMA DE ROTACION(D)',description:'Movimientos de la lavadora excesivo, vibracion, golpeteos de lamina, pueden ser problemas de dampers'}],
+    '5E07-PULSATOR':[{simtom:'SRC013-PROBLEMAS DE OPERACION**',description:'Si la transmision y motor funcionan correctamente , se escucha el funcionamiento pero no se mueve el pulseitor puede estar desgastado y no agitar'}],
     '5E04-MOTOR':[{simtom:'SRC013-PROBLEMAS DE OPERACION*',description:'Si ya se verifico que la tarjeta main manda los voltajes de manera correcta, nada obstruye el giro, y medimos los bornes del motor 1/2,2/3, 3/1 el cual nos dan los valores incorrectos, usamos este codigo'},{simtom:'SRC030-PROBLEMA DE ROTACION',description:'Un motor dañado puede causar problemas de lavado y centrifugado'}],
+    '5E04-MOTOR ':[{simtom:'SRC013-PROBLEMAS DE OPERACION*',description:'Si ya se verifico que la tarjeta main manda los voltajes de manera correcta, nada obstruye el giro, y medimos los bornes del motor 1/2,2/3, 3/1 el cual nos dan los valores incorrectos, usamos este codigo'},{simtom:'SRC030-PROBLEMA DE ROTACION',description:'Un motor dañado puede causar problemas de lavado y centrifugado'}],
     '5D03-HOSE-DRAIN':[{simtom:'SRC029-PROVEEDOR DE AGUA(HDW)',description:'Si el problema es la manguera de desaguea tapada se usaran estos codigos de cierre'}],
     '5D02-DRAIN MOTOR(AUTO)':[{simtom:'SRC030-PROBLEMA DE ROTACION',description:'Esta pieza libera el freno de trasnmision para permitir el libre giro de tina'}],
     '5D01-PUMP MOTOR':[{simtom:'SRC030-PROBLEMA DE ROTACION',description:'Si la bomba de drenado no funciona y no desecha el agua de la tina provocara que la lavadora no centrifuge, asi que presentara problemas de rotacion'}],

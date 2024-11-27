@@ -10,6 +10,9 @@ import FinalSummary from './components/FinalSummary';
 import BackToHomeButton from './components/BackToHomeButton';
 
 function App() {
+
+
+
   const [selections, setSelections] = useState({
     equipment: null,
     block: null,
@@ -20,6 +23,7 @@ function App() {
   });
   
   const [showFinalSummary, setShowFinalSummary] = useState(false);
+ 
 
   const handleSelectEquipment = (equipment) => {
     setSelections({ equipment, block: null, symptomBlock: null, subSymptom: null, repairCode: null, finalRepair: null });
