@@ -24,6 +24,7 @@ const RepairCode = ({ selectedSubSymptom, onRepairSelect }) => {
     'HE3-ENFRIAMIENTO EXCESIVO(RT31)':['SRC001-REPARAR(RT31)'],
     'HE9-FUGA DE GAS(GAS LEAKAGE)':['SRC001-REPARAR(GAS LEAKAGE)'],
     'HE9-FUGA DE GAS':['SRC000-CAMBIO DE PIEZA(CONDENSER)'],
+    'HE9-FUGA DE GAS(FI)':['SRC009-CAMBIAR/ABONAR/DEVOLVER'],
     'HE9-FUGA DE GAS**':['SRC001-REPARAR**'],
     'HF4-OBSTRUCCION DE TUBO DE ENTRADA':['SRC008-OTROS PROBLEMAS'],
     'HG1-NO AGITA':['SRC000-CAMBIO DE PIEZA'],
@@ -32,10 +33,7 @@ const RepairCode = ({ selectedSubSymptom, onRepairSelect }) => {
     'HG9-NO LAVA':['SRC000-CAMBIO DE PIEZA(p)'],
     'HLE-NO ROTA EL MOTOR':['SRC000-CAMBIO DE PIEZA'],
     'HLG-NO ROTA EL VENTILADOR':['SRC000-CAMBIO DE PIEZA(p)'],
-    'No funciona': ['Cambio de pieza', 'Lubricación'],
-    'Obstrucción': ['Parcial', 'Completa'],
-    'Ruido': ['Ajuste de componentes', 'Lubricación'],
-    'Obstrucción parcial':['reparar']
+    'HH6-COCINADO DISPAREJO':['SRC008-OTROS PROBLEMAS ']
   };
 
   const options = repairOptions[selectedSubSymptom];

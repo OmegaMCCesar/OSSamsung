@@ -24,6 +24,7 @@ const FinalRepairOptions = ({ selectedRepairCode, onFinalSelect }) => {
     'SRC001-REPARAR(GAS LEAKAGE)':['A13-AGREGAR REFRIGERANTE'],
     'SRC001-REPARAR**':['A13-AGREGAR REFRIGERANTE'],
     'SRC002-AJUSTE/ALINEACION/CONFIGURACION*':['M09-AJUSTE'],
+    'SRC009-CAMBIAR/ABONAR/DEVOLVER':['X04-CAMBIO FISICO'],
     'Cambio de pieza': ['Cambio de compresor', 'Cambio de motor'],
     'Lubricación': ['Aplicación de lubricante', 'Cambio de lubricante'],
     'Reparación de conexiones': ['Reconexión de cables', 'Cambio de conexiones'],
