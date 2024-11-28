@@ -11,6 +11,7 @@ const House = ({ onSelect }) => {
 
   return (
     <div className={styles.container}>
+      <button className={styles.butt}  onClick={() => alert('')}>Multiline</button>
       <h2>Seleccione un tipo de equipo</h2>
       <div className={styles.subContainer}>
       {equipmentOptions.map((equipment) => (

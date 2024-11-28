@@ -15,10 +15,6 @@
     padding: 0;
   }
 
-  li{
-    font-size: small;
-  }
-  
   .summaryList li {
     margin-bottom: 10px;
   }
@@ -37,4 +33,13 @@
     display: flex;
     text-align: end;
     margin-left: 30%;
+    font-size: small;
+  }
+
+  @media (max-width:480px){
+    li{
+      text-align: center;
+      margin-left: 0;
+      font-size: xx-small;
+    }
   }

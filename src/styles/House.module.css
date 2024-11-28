@@ -4,6 +4,10 @@
     align-items: center;
   }
 
+  .butt{
+    background-color: white;
+  }
+
   .subContainer
   {
     display: flex;
