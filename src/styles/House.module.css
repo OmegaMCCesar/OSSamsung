@@ -11,11 +11,13 @@
   .subContainer
   {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     flex-direction: row;
-    width: 60%;
+    width: 98%;
   }
   .option {
-    width: 100%;
+    width: 18%;
     cursor: pointer;
     padding: 10px;
     border: 1px solid #000;
