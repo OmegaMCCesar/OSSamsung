@@ -5,6 +5,7 @@ import styles from '../styles/SymptomCode.module.css';
 
 const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
   const symptomBlocks = {
+    '5E06-PULLEY-MOTOR':[{simtom:' SRC013-PROBLEMAS DE OPERACION ',description:''}],
     '5E10-CLUTCH':[{simtom:'SRC030-PROBLEMAS DE ROTACION    ',description:'Codigos correctos para cierre cambio de transmision'}],
     '5F07-HEATER-DRY ':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION ',description:'Usamos estos codigos al cambiar la valvula de gas'}],
     '5H01-FILTER':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION   ',description:'Recordemos que este filtro siempre debe de estar limpio para poder permitir el flujo de aire caliente'}],
