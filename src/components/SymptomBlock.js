@@ -5,9 +5,11 @@ import styles from '../styles/SymptomCode.module.css';
 
 const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
   const symptomBlocks = {
+    '5E01-TUB':[{simtom:'SRC015-RUIDO ',description:'Codigos a usar para tambor o tina, si esta esta golpeada , o con algun daño puede ocasionar ruidos raros o golpeteo interior dende del equipo con otras partes o piezas'}],
+    '5F04-THERMOSTAT':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION ',description:'Codigos de cierre para termostato, si el equipo gira pero no calienta existe gran posibilidad que este dañado el termostato'},{simtom:'SRC030-PROBLEMAS DE ROTACION ',description:''}],
     '5E06-PULLEY-MOTOR':[{simtom:' SRC013-PROBLEMAS DE OPERACION ',description:''}],
     '5E10-CLUTCH':[{simtom:'SRC030-PROBLEMAS DE ROTACION    ',description:'Codigos correctos para cierre cambio de transmision'}],
-    '5F07-HEATER-DRY ':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION ',description:'Usamos estos codigos al cambiar la valvula de gas'}],
+    '5F07-HEATER-DRY ':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION ',description:'Usamos estos codigos al cambiar la valvula de gas'},{simtom:'SRC013-PROBLEMAS DE OPERACION ',description:'Esta pieza es la encargada de generar el calor para encender la llama del equipo, si la pieza esta dañada puede que la tina gire pero no caliente'}],
     '5H01-FILTER':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION   ',description:'Recordemos que este filtro siempre debe de estar limpio para poder permitir el flujo de aire caliente'}],
     '5F05-THERMISTOR':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION(WD)',description:'Si esta pieza esta dañana no tendremos paso de corriente al sistema de calefaccion'}],
     '5E06-PULLEY-MOTOR':[{simtom:'SRC013-PROBLEMAS DE OPERACION   ',description:'Podemos tener sonidos raros cuando esta polea esta dañada como rechinidos, la banda puede llegar a dañarse si la polea tiene desgaste o algun tipo de juego'}],
