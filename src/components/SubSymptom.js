@@ -25,7 +25,10 @@ const SubSymptom = ({ selectedSymptom, onSubSymptomSelect }) => {
     'SRC012-PROBLEMAS DE ENCENDIDO':['HA1-NO ENCIENDE(M)'],
     'SRC012-PROBLEMAS DE ENCENDIDO(PCB DISPLAY)':['HA1-NO ENCIENDE'],
     'SRC012-PROBLEMAS DE ENCENDIDO(m)':['HA1-NO ENCIENDE(m)'],
-    ' SRC013-PROBLEMAS DE OPERACION ':['HLJ-DIRECCION DE GIRO NO AJUSTADO'],
+    'SRC012-PROBLEMAS DE ENCENDIDO ':['HA1-NO ENCIENDE '],
+    'SRC013-PROBLEMAS DE OPERACION':['HL1-ENCIENDE, PERO NO OPERA','HL2-OPERACION INTERMITENTE'],
+    ' SRC013-PROBLEMAS DE OPERACION ':['HLJ-DIRECCION DE GIRO NO AJUSTADO',],
+    '  SRC013-PROBLEMAS DE OPERACION ':['HG9-NO LAVA '],
     'SRC013-PROBLEMAS DE OPERACION(DOOR)':['HL1-ENCIENDE, PERO NO OPERA(DOOR)'],
     'SRC013-PROBLEMAS DE OPERACION**':['HG1-NO AGITA'],
     'SRC013-PROBLEMAS DE OPERACION*':['HG9-NO LAVA'],
@@ -42,6 +45,8 @@ const SubSymptom = ({ selectedSymptom, onSubSymptomSelect }) => {
     'SRC029-PROVEDOR DE AGUA':['HG2-SIN SUMINISTRO DE AGUA'],
     'SRC029-PROVEEDOR DE AGUA':['HG2-SIN SUMINISTRO DE AGUA'],
     'SRC029-PROVEEDOR DE AGUA(HDW)':['HF4-OBSTRUCCION DE TUBO DE ENTRADA'],
+    'SRC030-PROBLEMA DE ROTACION ':['HLE-NO ROTA EL MOTOR'],
+    'SRC030-PROBLEMAS DE ROTACION':['HLE-NO ROTA EL MOTOR'],
     'SRC030-PROBLEMA DE ROTACION':['HG4-NO CENTRIFUGA'],
     'SRC030-PROBLEMA DE ROTACION  ':['HLG-NO ROTA EL VENTILADOR'],
     'SRC030-PROBLEMA DE ROTACION(D)':['HLE-NO ROTA EL MOTOR'],
@@ -49,12 +54,6 @@ const SubSymptom = ({ selectedSymptom, onSubSymptomSelect }) => {
     'SRC030-PROBLEMAS DE ROTACION(m)':['HLE-NO ROTA EL MOTOR(m)'],
     'SRC030-PROBLEMAS DE ROTACION    ':['HG4-NO CENTRIFUGA '],
     'SRC030-PROBLEMAS DE ROTACION ':['HLE-NO ROTA EL MOTOR '],
-    'Ruido': ['Ruido continuo', 'Ruido intermitente'],
-    'Problemas de operación': ['No funciona', 'Funciona intermitente'],
-    'Obstrucción': ['Obstrucción parcial', 'Obstrucción completa'],
-    'Fuga': ['Fuga pequeña', 'Fuga grande'],
-    'No gira': ['Atascado', 'Roto'],
-    'Vibración': ['Vibración ligera', 'Vibración fuerte'],
   };
 
   return (
