@@ -5,6 +5,7 @@ import styles from '../styles/SymptomCode.module.css';
 
 const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
   const symptomBlocks = {
+    '5B03-DIAPHRAGM':[{simtom:'SRC022-FUGA/FUGA ',description:'Normalmente esta parte se puede dañar al no dar mantenimiento , por el uso incorrecto continuo del equipo'}],
     '5G01-TOP-COVER':[{simtom:'SRC012-PROBLEMAS DE ENCENDIDO ',description:'Una ves que se confirmo voltaje adecuado entrante a display y este no enciende sera necesario cambiar la pieza'},{simtom:'SRC013-PROBLEMAS DE OPERACION',description:'Cuando encontramos daño en los botones, no digita o se puede controlar de manera correcta el equipo, es pposible que este dañado el'}],
     '5E03-FLANGE SHAFT':[{simtom:'SRC015-RUIDO ',description:'Un desvalance o daño de esta pieza puede causar ruidos excesivos'},{simtom:'SRC030-PROBLEMA DE ROTACION ', description:'El que esta pieza este dañada , normalmente fracturada de alguno de los brazos, terminara dejando car la tina , provocando la caida de la tina, rozando con la tina plastica, impidiendo el funcionamiento del equipo'}],
     ' 5E04-MOTOR ':[{simtom:'SRC015-RUIDO ',description:'Una polea dañada puede ocasionar ruidos durante el funcionamiento , atorar el tambor y no permitir rotar la tina'},{simtom:'SRC030-PROBLEMAS DE ROTACION',description:'Una polea dañada puede causar el atasco del motor'}],
