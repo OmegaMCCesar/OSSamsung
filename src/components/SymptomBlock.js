@@ -18,7 +18,7 @@ const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
     '5F07-HEATER-DRY ':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION ',description:'Usamos estos codigos al cambiar la valvula de gas'},{simtom:'SRC013-PROBLEMAS DE OPERACION ',description:'Esta pieza es la encargada de generar el calor para encender la llama del equipo, si la pieza esta dañada puede que la tina gire pero no caliente'}],
     '5H01-FILTER':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION   ',description:'Recordemos que este filtro siempre debe de estar limpio para poder permitir el flujo de aire caliente'}],
     '5F05-THERMISTOR':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION(WD)',description:'Si esta pieza esta dañana no tendremos paso de corriente al sistema de calefaccion'}],
-    '5E06-PULLEY-MOTOR':[{simtom:'SRC013-PROBLEMAS DE OPERACION   ',description:'Podemos tener sonidos raros cuando esta polea esta dañada como rechinidos, la banda puede llegar a dañarse si la polea tiene desgaste o algun tipo de juego'}],
+    '5E06-PULLEY-MOTOR':[{simtom:' SRC013-PROBLEMAS DE OPERACION ',description:'Podemos tener sonidos raros cuando esta polea esta dañada como rechinidos, la banda puede llegar a dañarse si la polea tiene desgaste o algun tipo de juego'}],
     '5F07-HEATER-DRY':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION(WD)',description:'Una ves que ya verificamos la continuidad de la resistencia y ohms dentro del rango correcto, daremos por echo que la resistencia esta dañada'}],
     '5F03-MOTOR-FAN':[{simtom:'SRC030-PROBLEMA DE ROTACION(MF)',description:'Si esta pieza falla nos dara un problema en el secado'}],
     '5E11-DAMPER ':[{simtom:'SRC030-PROBLEMA DE ROTACION(D)',description:'Movimientos de la lavadora excesivo, vibracion, golpeteos de lamina, pueden ser problemas de dampers'}],
@@ -53,7 +53,8 @@ const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
     '5C03-WATER LEVEL SENSOR':[{simtom:'SRC013-PROBLEMAS DE OPERACION(P)',description:'Algunos sintomas que nos puede dar un presostato dañado es un llenado sin parar hasta que se desborde el agua, un drenado sin fin, en el cual no detecta los niveles de agua'},{simtom:'SRC030-PROBLEMA DE ROTACION',description:'Si el presostato no detecta que se ha drenado por completo el agua, la lavadora no podra exprimir'}],
     '5C04-HOSE DRAWER':[{simtom:'SRC029-PROVEEDOR DE AGUA(HDW)',description:'Aplicar void 1 para sacar de garantia ya que este problema es causado por cliente'}],
     'FAUNA NOCIVA':[{simtom:'FAUNA ENCONTRADA EN EQUIPO',description:'Cualquier tipo de animal o insecto encontrado en el quipo es considerado fauna nociva, en estos casos es necesario cerrar con el bloque de codigo(pieza) donde se encontro la fauna, si tenemos mas de un componente con fauna, tomaremos como referencia la parte de mayor importancia, aplicar void 1 para sacar de garantia el equipo'}],
-    'select':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION(GO)',description:'Uso de codigo si el quemador, tiene una flama dispareja, y no calienta de forma pareja'}]
+    'select(Fuga de gas)':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION(GO)',description:'Uso de codigo si el quemador, tiene una flama dispareja, y no calienta de forma pareja'},{simtom:' SRC022-FUGA/FUGA ',description:'Cual quier fuga de gas en conexiones o en elementos de la estufa sera tratado con este codigo'}],
+    'select(bujia)':[{simtom:' SRC012-PROBLEMAS DE ENCENDIDO ',description:'Si el equipom se encuentra bien conectado y con las adecuaciones necesarias, podemos usar este codigo'}]
   };
 
   return (
