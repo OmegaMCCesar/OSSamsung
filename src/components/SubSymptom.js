@@ -3,8 +3,18 @@ import React from 'react';
 import styles from '../styles/SubSymptom.module.css';
 
 
+
+
+
 const SubSymptom = ({ selectedSymptom, onSubSymptomSelect }) => {
+
+const HL1 = ' HL1-ENCIENDE, PERO NO OPERA ';
+const HL2 = 'HL2-OPERACION INTERMITENTE ';
+
+
+
   const subSymptoms = {
+    ' SRC013-PROBLEMA DE OPERACION ' : [HL1, HL2],
     'FAUNA ENCONTRADA EN EQUIPO':[],
     'SRC015-RUIDO':['HK1-RUIDO DE MOTOR'],
     'SRC021-CALENTAMIENTO/REFRIGERACION(GO)':['HH6-COCINADO DISPAREJO'],
@@ -28,6 +38,8 @@ const SubSymptom = ({ selectedSymptom, onSubSymptomSelect }) => {
     'SRC012-PROBLEMAS DE ENCENDIDO(m)':['HA1-NO ENCIENDE(m)'],
     'SRC012-PROBLEMAS DE ENCENDIDO ':['HA1-NO ENCIENDE '],
     ' SRC012-PROBLEMAS DE ENCENDIDO ':['HA1-NO ENCIENDE  '],
+    ' SRC012-PROBLEMAS DE ENCENDIDO  ':['  HA1-NO ENCIENDE  '],/* Para cambio de PCB */
+    '  SRC013-PROBLEMAS DE OPERACION  ':['HL1-ENCIENDE, PERO NO OPERA '],/* Para problemas de partes mecanicas */
     'SRC013-PROBLEMAS DE OPERACION':['HL1-ENCIENDE, PERO NO OPERA','HL2-OPERACION INTERMITENTE'],
     ' SRC013-PROBLEMAS DE OPERACION ':['HLJ-DIRECCION DE GIRO NO AJUSTADO'],
     '  SRC013-PROBLEMAS DE OPERACION ':['HG9-NO LAVA '],
@@ -59,6 +71,8 @@ const SubSymptom = ({ selectedSymptom, onSubSymptomSelect }) => {
     'SRC030-PROBLEMAS DE ROTACION   ':['HG4-NO CENTRIFUGA '],
     'SRC030-PROBLEMAS DE ROTACION    ':['HG4-NO CENTRIFUGA '],
     'SRC030-PROBLEMAS DE ROTACION ':['HLE-NO ROTA EL MOTOR '],
+    ' SRC030-PROBLEMA DE ROTACION ':['HLG-NO ROTA EL VENTILADOR'],
+    ' SRC030-PROBLEMA DE ROTACION  ':[' HLE-NO ROTA EL MOTOR ']
   };
 
   return (

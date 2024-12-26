@@ -2,6 +2,15 @@
 import React from 'react';
 import styles from '../styles/SymptomCode.module.css';
 
+const SRC030 = ' SRC030-PROBLEMA DE ROTACION ';
+const SRC030M = ' SRC030-PROBLEMA DE ROTACION  ';
+const SCR021 = 'SRC021-CALENTAMIENTO/REFRIGERACION ';
+const SRC013 = ' SRC013-PROBLEMA DE OPERACION ';
+const SRC013MEC = '  SRC013-PROBLEMAS DE OPERACION  '
+const SRC013PCB = 'SRC013-PROBLEMAS DE OPERACION(PCB)';
+const SRC012 = ' SRC012-PROBLEMAS DE ENCENDIDO ';
+const SRC012PCB = ' SRC012-PROBLEMAS DE ENCENDIDO  ';
+
 
 const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
   const symptomBlocks = {
@@ -33,7 +42,7 @@ const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
     '4C09-EVAPORATOR COVER SERVICE BOLETIN':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION*',description:'Usar estos codigos cuando se realice la aplicacion del boletin'}],
     '4C09-EVAPORATOR COVER':[{simtom:'SRC030-PROBLEMA DE ROTACION  ',description:'El hielo excesivo puede dañar el motor ventilador, lo que causa un enfriamiento pobre en la unidad'}],
     '4B01-COMPRESSOR':[{simtom:'SRC015-RUIDO',description:'Usar este codigo cuando el motor presenta un sonido anomalo'},{simtom:'SRC013-PROBLEMAS DE OPERACION(COMPRESSOR)', description:'Usamos este codigo cuando el motor no funciona correctamente, puede ser el compresor dañado, mal conectado o alguna razon por la cual el compresor no puede trabajar de manera adecuada'}],
-    '4A01-MAIN PCB':[{simtom:'SRC013-PROBLEMAS DE OPERACION(PCB)',description:'Usamos este codigo cuando la tarjeta enciende pero no esta funcionando correctamente'},{simtom:'SRC019-PROBLEMAS DE CONEXION',description:'Puede ser causado por algun arnes dañado, terminales dañadas, cables trozados, o conexiones flojas'}],
+    '4A01-MAIN PCB':[{simtom:SRC013PCB,description:'Usamos este codigo cuando la tarjeta enciende pero no esta funcionando correctamente'},{simtom:'SRC019-PROBLEMAS DE CONEXION',description:'Puede ser causado por algun arnes dañado, terminales dañadas, cables trozados, o conexiones flojas'}],
     '4A02-PANEL(DISPLAY) PCB':[{simtom:'SRC012-PROBLEMAS DE ENCENDIDO(PCB DISPLAY)',description:'Usamos ee codigo cuando la tarjeta recibe corriente electrica con parametros de 110V a 127V y no enciende.'}],
     'AB03-RELAY PTC':[{simtom:'SRC012-PROBLEMAS DE ENCENDIDO(COMPRESSOR*)',description:'Esta pieza se encarga del arranque del motor, si esta dañanada motor no funciona, funcuina  unos minutos y se apaga, revisar bornes de motor para verificar el buen estado del motor'}],
     '4B04-COMPRESSOR FAN MOTOR(CIRCUIT MOTOR)':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION',description:'Uso de este codigo cuando el ventilador tiene un problema mecanico o electrico '}],
@@ -52,6 +61,22 @@ const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
     '5C02-WATER-VALVE':[{simtom:'SRC029-PROVEEDOR DE AGUA',description:'Si no tenemos flujo de agua , verificamos el ohmeaje de cada valvula de agua, normalmente a 1k ohm, a 127v. El daño puede ser por la bobina quemada o por el cuerpo de la valvula dañana'}],
     '5C03-WATER LEVEL SENSOR':[{simtom:'SRC013-PROBLEMAS DE OPERACION(P)',description:'Algunos sintomas que nos puede dar un presostato dañado es un llenado sin parar hasta que se desborde el agua, un drenado sin fin, en el cual no detecta los niveles de agua'},{simtom:'SRC030-PROBLEMA DE ROTACION',description:'Si el presostato no detecta que se ha drenado por completo el agua, la lavadora no podra exprimir'}],
     '5C04-HOSE DRAWER':[{simtom:'SRC029-PROVEEDOR DE AGUA(HDW)',description:'Aplicar void 1 para sacar de garantia ya que este problema es causado por cliente'}],
+    '7A01-MAGNETRON':[{simtom:SCR021,description:'Puede que el horno encienda y opere pero presente fallos al calenta muy poco o nulo'},{simtom:SRC013,description:'Puede que el equipo haga un ruido muy fuerte al intentar calentar mas no se sienta calentamiento alguno'}],
+    '7A02-H.V.CAPACITOR':[{simtom:SRC013,description:'Puede que el equipo haga un ruido muy fuerte al intentar calentar mas no se sienta calentamiento alguno'}],
+    '7A03-H.V.TRANS':[{simtom:SRC013,description:'Puede que el equipo haga un ruido muy fuerte al intentar calentar mas no se sienta calentamiento alguno'}],
+    '7A04-POWER CORD':[{simtom:SRC012,description:'Si el cordon esta quemado , tiene alguna cortadura o desgaste , puede darnos un mal funcionamiento del horno o definitivamente no encender'}],
+    '7A05-H.V.FUSE':[{simtom:SRC012,description:'Si no tenemos ninguna señal de funcionmiento , no enciende la pantalla o luz del horno y ya comprobamos que tenemos corriente electrica, tanto del toma corriente como el cordon de alimentacion, podemos determinar que el fusible esta dañado'}],
+    '7A06-H.V.DIODE':[{simtom:SRC013,description:'Cuando esta pieza esta dañana el sistema de calefaccion no funciona de manera correcta, solo se escucha un ruido mas fuerte de lo normal, sin embargo no calentara ni un poco'}],
+    '7B01-FAN MOTOR':[{simtom:SRC030,description:'Codigos al cambiar el fan motor'}],
+    '7B02-DRIVE MOTOR':[{simtom:SRC030M, description:'Puede que el horno caliente mas no gire el plato, si esto sucede puede haber un calentamiento disparejo'}],
+    '7C01-MAIN PCB':[{simtom:SRC013PCB,description:'Puede que el horno encienda pero no opere de manera correcta'},{simtom:SRC012PCB,description:'Si tenemos alimentacion electrica y valores de voltaje correctos, el fusible esta en buen estado , seguramente sera problemas de la PCB'}],
+    '7D01-LAMP':[{simtom:SRC012,description:'Puede que el horno opere con normalidad pero no encienda la luz interior'}],
+    '7D04-HEATER':[{simtom:SCR021,description:'Si tenemos corriente en la resistencia, los termincos estan en buen eestado, seguramente el problema sea la resistencia grill'}],
+    '7D05-MICRO S/W':[{simtom:SRC013,description:'Puede que la cuenta regresiva en el contador descienda pero no caliente el horno, esto se puede deber a algun fallo en los micros'}],
+    '7D06-MEMBRANE':[{simtom:SRC013,description:'Si el equipo enciende pero los botones no pueden ser selecionados o no se alcanza a visualisar los numeros de la pantalla, podria ser falla en la membrana'},],
+    '7E01-DOOR':[{simtom:SRC013MEC,description:'Una puerta desajustada o caida puede provocar un mal funcionamiento del hotno , o no dejarlo funcionar para nada, puede que encienda pero no opere'}],
+    '7D09-SENSOR':[{simtom:SRC013,description:'Si el horno enciende pero no opera , puede ser que el termico este dañado'}],
+    '7D07-WIRE HARNESS':[{simtom:SRC012,description:'Siempre que tengamos algun funcionamiento deficiente en el equipo es necesario revisar el arnes de cables , si este esta dañado o cortado, no permitira el paso de corriente a los componentes'},{simtom:SRC013,description:'Estes es otro problema que puede causar mal funcionamiento en el equipo, si el arnes esta dañado, cortado, o en corto, no permitira el paso de corriente a los componentes'}],
     'FAUNA NOCIVA':[{simtom:'FAUNA ENCONTRADA EN EQUIPO',description:'Cualquier tipo de animal o insecto encontrado en el quipo es considerado fauna nociva, en estos casos es necesario cerrar con el bloque de codigo(pieza) donde se encontro la fauna, si tenemos mas de un componente con fauna, tomaremos como referencia la parte de mayor importancia, aplicar void 1 para sacar de garantia el equipo'}],
     'select(Fuga de gas)':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION(GO)',description:'Uso de codigo si el quemador, tiene una flama dispareja, y no calienta de forma pareja'},{simtom:' SRC022-FUGA/FUGA ',description:'Cual quier fuga de gas en conexiones o en elementos de la estufa sera tratado con este codigo'}],
     'select(bujia)':[{simtom:' SRC012-PROBLEMAS DE ENCENDIDO ',description:'Si el equipom se encuentra bien conectado y con las adecuaciones necesarias, podemos usar este codigo'}]
@@ -60,12 +85,12 @@ const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
   return (
     <div className={styles.container}>
       <h2>Seleccione el bloque de síntoma para {selectedBlock}</h2>
-      {symptomBlocks[selectedBlock].map((symptom) => (
+      {symptomBlocks[selectedBlock] ? symptomBlocks[selectedBlock].map((symptom) => (
         <div key={symptom.simtom}  className={styles.option}>
           <button onClick={() => onSymptomSelect(symptom.simtom)} >{symptom.simtom}</button>
           <textarea readOnly>{symptom.description}</textarea>
         </div>       
-      ))}
+      )):(<p> No se a a encontrado bloque de sintoma</p>)}
     </div>
   );
 };
