@@ -32,7 +32,13 @@
   }
 
   .imgU{
-    width: 95%;
+    width: 94%;
+    margin: 5% auto;
+    height: 30vh;
+  }
+
+  .imgUHorno{
+    width: 20%;
     margin: 5% auto;
   }
   
@@ -75,6 +81,10 @@
      
     img{
       height: 15vh;
+    }
+
+    .imgU{
+      height: 20vh;
     }
 
   }

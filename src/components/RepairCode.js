@@ -5,6 +5,14 @@ import styles from '../styles/RepairCode.module.css';
 
 const RepairCode = ({ selectedSubSymptom, onRepairSelect }) => {
   const repairOptions = {
+    'HN1-MARCA, ABOLLADURA':['SRC000-CAMBIO DE PIEZA      '],
+    'HN2-ESPACIO, HUECO':['SRC000-CAMBIO DE PIEZA      '],
+    'HN3-DEFORMACION':['SRC000-CAMBIO DE PIEZA      '],
+    'HN4-DECOLORACION':['SRC000-CAMBIO DE PIEZA      '],
+    'HN6-PARTES SEPARADAS':['SRC000-CAMBIO DE PIEZA      '],
+    'HN7-PINTURA DESPEGADA':['SRC000-CAMBIO DE PIEZA      '],
+    'HN8-OXIDADO':['SRC000-CAMBIO DE PIEZA      '],
+    'HNG-RASGUÑADO':['SRC000-CAMBIO DE PIEZA      '],
     'AC1-RUIDO MECANICO':['SRC000-CAMBIO DE PIEZA'],
     'HC1-NO HAY CALEFACCION ':['SRC000-CAMBIO DE PIEZA '],
     'HC2-CALEFACCION DEBIL':['SRC008-OTROS PROBLEMAS'],

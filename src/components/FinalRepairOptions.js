@@ -5,6 +5,7 @@ import styles from '../styles/FinalRepairOptions.module.css';
 
 const FinalRepairOptions = ({ selectedRepairCode, onFinalSelect }) => {
   const finalOptions = {
+    'SRC000-CAMBIO DE PIEZA      ':['A03-REMPLAZO DE PARTES COSMETICAS'],
     'SRC000-CAMBIO DE PIEZA  ':['M20-REMPLAZO DE PANEL FRONTAL'],
     'SRC000-CAMBIO DE PIEZA(m)':['A16-REEMPLAZO DE MOTOR'],
     'SRC000-CAMBIO DE PIEZA':['A02-REMPLAZO DE PARTES MECANICAS'],

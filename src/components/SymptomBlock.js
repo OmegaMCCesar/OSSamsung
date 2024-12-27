@@ -10,6 +10,7 @@ const SRC013MEC = '  SRC013-PROBLEMAS DE OPERACION  '
 const SRC013PCB = 'SRC013-PROBLEMAS DE OPERACION(PCB)';
 const SRC012 = ' SRC012-PROBLEMAS DE ENCENDIDO ';
 const SRC012PCB = ' SRC012-PROBLEMAS DE ENCENDIDO  ';
+const SRC011 = 'SRC011-PROBLEMAS COSMETICOS';
 
 
 const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
@@ -77,6 +78,7 @@ const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
     '7E01-DOOR':[{simtom:SRC013MEC,description:'Una puerta desajustada o caida puede provocar un mal funcionamiento del hotno , o no dejarlo funcionar para nada, puede que encienda pero no opere'}],
     '7D09-SENSOR':[{simtom:SRC013,description:'Si el horno enciende pero no opera , puede ser que el termico este dañado'}],
     '7D07-WIRE HARNESS':[{simtom:SRC012,description:'Siempre que tengamos algun funcionamiento deficiente en el equipo es necesario revisar el arnes de cables , si este esta dañado o cortado, no permitira el paso de corriente a los componentes'},{simtom:SRC013,description:'Estes es otro problema que puede causar mal funcionamiento en el equipo, si el arnes esta dañado, cortado, o en corto, no permitira el paso de corriente a los componentes'}],
+    '7E03-CAVITY':[{simtom:SRC011,description:'Cualquier daño al gabinete, interior o exterior, causado por daños fisicos, golpes, caidas, rayones, abolladuras, etc, sera considerado daño cosmetico'}],
     'FAUNA NOCIVA':[{simtom:'FAUNA ENCONTRADA EN EQUIPO',description:'Cualquier tipo de animal o insecto encontrado en el quipo es considerado fauna nociva, en estos casos es necesario cerrar con el bloque de codigo(pieza) donde se encontro la fauna, si tenemos mas de un componente con fauna, tomaremos como referencia la parte de mayor importancia, aplicar void 1 para sacar de garantia el equipo'}],
     'select(Fuga de gas)':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION(GO)',description:'Uso de codigo si el quemador, tiene una flama dispareja, y no calienta de forma pareja'},{simtom:' SRC022-FUGA/FUGA ',description:'Cual quier fuga de gas en conexiones o en elementos de la estufa sera tratado con este codigo'}],
     'select(bujia)':[{simtom:' SRC012-PROBLEMAS DE ENCENDIDO ',description:'Si el equipom se encuentra bien conectado y con las adecuaciones necesarias, podemos usar este codigo'}]
