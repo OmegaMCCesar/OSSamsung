@@ -16,7 +16,7 @@ const House = ({ onSelect }) => {
       <div className={styles.subContainer}>
       {equipmentOptions.map((equipment) => (
         <div key={equipment.name} onClick={() => onSelect(equipment.name)} className={styles.option}>
-          <img className={equipment.name !== 'Microondas'? styles.imgU : styles.imgHorno } src={equipment.imgURl}  alt={equipment.name} /> 
+          <img className={styles.imgU} src={equipment.imgURl}  alt={equipment.name} /> 
         </div>
       ))}
       </div>
