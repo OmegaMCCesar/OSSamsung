@@ -41,6 +41,32 @@
     width: 20%;
     margin: 5% auto;
   }
+
+
+  /* src/styles/House.module.css */
+
+.filter {
+  margin: 10px 0 20px; /* Espaciado superior e inferior */
+  padding: 10px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de texto */
+  color: #333; /* Color del texto */
+  background-color: #f9f9f9; /* Fondo claro */
+  border: 1px solid #ccc; /* Borde sutil */
+  border-radius: 5px; /* Bordes redondeados */
+  outline: none; /* Quitar el borde azul al seleccionar */
+  cursor: pointer; /* Manito al pasar el mouse */
+  transition: all 0.2s ease-in-out; /* Animación sutil */
+}
+
+.filter:hover {
+  background-color: #e6e6e6; /* Fondo más oscuro al pasar el mouse */
+}
+
+.filter:focus {
+  border-color: #007bff; /* Color de borde al enfocarse */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Resplandor */
+}
+
   
 
   /*Configuracion para tabletas */
