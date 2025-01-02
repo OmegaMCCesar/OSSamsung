@@ -15,6 +15,7 @@ const House = ({ onSelect }) => {
     { name: 'Estufa', imgURl: 'https://i5-mx.walmartimages.com/samsmx/images/product-images/img_large/981004685l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF', types: ['estufas'] },
     { name: 'Lavasecadora', imgURl: 'https://i5-mx.walmartimages.com/samsmx/images/product-images/img_large/981022018l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF', types: ['lavasecadoras'] },
     { name: 'Secadora', imgURl: 'https://i5.walmartimages.com/asr/ff1b7876-648e-48a8-b8b2-944b0eca0d4f.327452761c0030d72b7b80984eacf48d.png?odnHeight=612&odnWidth=612&odnBg=FFFFFF', types: ['secadoras'] },
+    { name: 'EstufaS', imgURl: 'https://http2.mlstatic.com/D_NQ_NP_720146-MLA48680778505_122021-O.webp', types: ['estufas'] }, 
     { name: 'Microondas', imgURl: 'https://petenattiar.vtexassets.com/arquivos/ids/207973/HORNO-SAMSUNG-MG23-CON-GRILL-23LTS-SILVER.jpg?v=637932513797200000', types: ['microondas'] },
     { name: 'MicroondasSinGrill', imgURl: 'https://i5-mx.walmartimages.com/samsmx/images/product-images/img_large/980014578l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF', types: ['microondas'] },
   ];
