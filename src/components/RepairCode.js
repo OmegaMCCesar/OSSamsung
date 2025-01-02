@@ -52,6 +52,7 @@ const RepairCode = ({ selectedSubSymptom, onRepairSelect }) => {
     'HE9-FUGA DE GAS':['SRC000-CAMBIO DE PIEZA(CONDENSER)'],
     'HE9-FUGA DE GAS(FI)':['SRC009-CAMBIAR/ABONAR/DEVOLVER'],
     'HE9-FUGA DE GAS**':['SRC001-REPARAR**'],
+    'HE9-FUGA DE GAS ':['SRC001-REPARAR'],/* Codigos para cierre por cambio de valvula de 3 vias */
     ' HE9-FUGA DE GAS ':['SRC008-OTROS PROBLEMAS'],
     'HF4-OBSTRUCCION DE TUBO DE ENTRADA':['SRC008-OTROS PROBLEMAS'],
     'HG1-NO AGITA':['SRC000-CAMBIO DE PIEZA'],

@@ -5,6 +5,7 @@ import styles from '../styles/SymptomCode.module.css';
 const SRC030 = ' SRC030-PROBLEMA DE ROTACION ';
 const SRC030M = ' SRC030-PROBLEMA DE ROTACION  ';
 const SRC029 = 'SRC029-PROVEEDOR DE AGUA ';
+const SRC022 = ' SRC022-FUGA/FUGA  ';
 const SCR021 = 'SRC021-CALENTAMIENTO/REFRIGERACION ';
 const SRC013 = ' SRC013-PROBLEMA DE OPERACION ';
 const SRC013MEC = '  SRC013-PROBLEMAS DE OPERACION  '
@@ -16,6 +17,7 @@ const SRC011 = 'SRC011-PROBLEMAS COSMETICOS';
 
 const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
   const symptomBlocks = {
+    '4B09-GAS LEAKAGE ':[{simtom:SRC022,description:'Si necesitamos cambiar la valvula de 3 vias usaremos estos codigos para cerrar la OS'}],
     '5C02-WATER-VALVE ':[{simtom:SRC029,description:'Si los dispensadores de detergente no estan funcionando correctamente, es posible que la valvula de agua este dañada o los motores de los dispensadores. Al ser una parte conectada alas v alvula de agua usaremos estos codigos para cerrar de manera correcta la OS'}],
     ' 5F07-HEATER-DRY ':[{simtom:SCR021,description:'Debemos de tomar en cuenta que en este modelo no se reparan o cambian las piezas del modulo de secado, solo se cambia el modulo completo. Por esta misma razon al incluir compresor, tomaremos esta falla como remplazo de partes electricas'}],
     '5B03-DIAPHRAGM':[{simtom:'SRC022-FUGA/FUGA ',description:'Normalmente esta parte se puede dañar al no dar mantenimiento , por el uso incorrecto continuo del equipo'}],
