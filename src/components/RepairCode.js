@@ -5,6 +5,7 @@ import styles from '../styles/RepairCode.module.css';
 
 const RepairCode = ({ selectedSubSymptom, onRepairSelect }) => {
   const repairOptions = {
+    'C94-DOOR ALIGMENT':['SRC000-CAMBIO DE PIEZA'],
     'HN1-MARCA, ABOLLADURA':['SRC000-CAMBIO DE PIEZA      '],
     'HN2-ESPACIO, HUECO':['SRC000-CAMBIO DE PIEZA      '],
     'HN3-DEFORMACION':['SRC000-CAMBIO DE PIEZA      '],
