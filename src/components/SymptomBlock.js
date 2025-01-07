@@ -11,6 +11,7 @@ const SRC015B = 'SRC015-RUIDO '; /* Codigos de cierre para bisagras */
 const SRC013 = ' SRC013-PROBLEMA DE OPERACION ';
 const SRC013MEC = '  SRC013-PROBLEMAS DE OPERACION  '
 const SRC013PCB = 'SRC013-PROBLEMAS DE OPERACION(PCB)';
+const SRC013A = 'SRC013-PROBLEMAS DE OPERACION.';/* Codigos arneses */
 const SRC012 = ' SRC012-PROBLEMAS DE ENCENDIDO ';
 const SRC012PCB = ' SRC012-PROBLEMAS DE ENCENDIDO  ';
 const SRC011 = 'SRC011-PROBLEMAS COSMETICOS';
@@ -62,6 +63,7 @@ const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
     '4B09-GAS LEAKAGE':[{simtom:'SRC022-FUGA/FUGA(GAS LEAKAGE)',description:'Cualquier fuga que pueda ser reparada en la cual no se cambia piezas, a excepcion de dryer es gas leakage'},{simtom:'SRC022-FUGA/FUGA(FUGA INTERNA)',description:'Usar estos codigos para fuga interna y cambio fisico'}],
     '4C08-AMBIENT SENSOR(ELECTRONIC)':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION(SENSOR ELECTRONIC)',description:'Usamos este codigo cuado tenemos un enfriamento pobre o sobre enfriamiento, ya que los sensores termistores ya no marcan una lectura correcta de la temperatura hambiente'}],
     'BR13-WATER VALVE(ICE/WATER)':[{simtom:'SRC029-PROVEDOR DE AGUA',description:'Cuando la fabrica de hielos no hace hielos o el refrigerador no despacha agua, puede ser sintoma de valvulas dañadas, una vez cambiando la pieza usaremos este codigo'}],
+    'BR13-WATER VALVE(ICE/WATER) ':[{simtom:'SRC029-PROVEDOR DE AGUA ',description:'Cuando la fabrica de hielos no hace hielos o el refrigerador no despacha agua, puede ser sintoma de un filtro sucio o tapado, una vez cambiando la pieza usaremos este codigo'}],
     'BR07-ICE MAKER':[{simtom:'SRC013-PROBLEMAS DE OPERACION(IM)',description:'Usamos este codigo ya revisamos los demas componentes involucrados para la fabricacion de hielos, y se cambia la ice maker'}],
     'AR41-HOT PIPE':[{simtom:'SRC022-FUGA/FUGA**',description:'Usar este codigo en fuga interna'}],
     '4F05-REFRIGERATOR DOOR':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION(RT31)',description:'Uso de este cierre para el empleo de boletin en refrigeradores RT31'}],
@@ -87,6 +89,7 @@ const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
     '7D06-MEMBRANE':[{simtom:SRC013,description:'Si el equipo enciende pero los botones no pueden ser selecionados o no se alcanza a visualisar los numeros de la pantalla, podria ser falla en la membrana'},],
     '7E01-DOOR':[{simtom:SRC013MEC,description:'Una puerta desajustada o caida puede provocar un mal funcionamiento del hotno , o no dejarlo funcionar para nada, puede que encienda pero no opere'}],
     '7D09-SENSOR':[{simtom:SRC013,description:'Si el horno enciende pero no opera , puede ser que el termico este dañado'}],
+    '7D07-WIRE HARNESS ':[{simtom:SRC013A,description:'Daños en el arnes de cables pueden provocar mal funcionamiento del horno'}],
     '7D07-WIRE HARNESS':[{simtom:SRC012,description:'Siempre que tengamos algun funcionamiento deficiente en el equipo es necesario revisar el arnes de cables , si este esta dañado o cortado, no permitira el paso de corriente a los componentes'},{simtom:SRC013,description:'Estes es otro problema que puede causar mal funcionamiento en el equipo, si el arnes esta dañado, cortado, o en corto, no permitira el paso de corriente a los componentes'}],
     '7E03-CAVITY':[{simtom:SRC011,description:'Cualquier daño al gabinete, interior o exterior, causado por daños fisicos, golpes, caidas, rayones, abolladuras, etc, sera considerado daño cosmetico'}],
     'FAUNA NOCIVA':[{simtom:'FAUNA ENCONTRADA EN EQUIPO',description:'Cualquier tipo de animal o insecto encontrado en el quipo es considerado fauna nociva, en estos casos es necesario cerrar con el bloque de codigo(pieza) donde se encontro la fauna, si tenemos mas de un componente con fauna, tomaremos como referencia la parte de mayor importancia, aplicar void 1 para sacar de garantia el equipo'}],

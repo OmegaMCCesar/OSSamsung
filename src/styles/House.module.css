@@ -8,6 +8,17 @@
     background-color: white;
   }
 
+  .buttonHomePage{
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color: black;
+    margin: 1vh 22vh;
+    justify-content: center;
+    border: solid 1px #ccc;  
+    border-radius: 1vh;
+    padding: 1vh;
+  }
+
   .subContainer
   {
     display: flex;

@@ -1,6 +1,8 @@
 // src/components/Home.js
 import React, { useState } from 'react';
 import styles from '../styles/House.module.css';
+import { Link } from 'react-router-dom';
+
 
 const House = ({ onSelect }) => {
   const equipmentOptions = [
@@ -10,7 +12,7 @@ const House = ({ onSelect }) => {
     { name: 'Bespoke', imgURl: 'https://i5-mx.walmartimages.com/mg/gm/1p/images/product-images/img_large/00750940183015l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF', types: ['refrigeradores'] },
     { name: 'RefFD', imgURl: 'https://cdn.homedepot.com.mx/productos/150621/150621-za1.jpg', types: ['refrigeradores'] },
     { name: 'RefrigeradorBespoke', imgURl: 'https://i5-mx.walmartimages.com/samsmx/images/product-images/img_large/981024523l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF', types: ['refrigeradores'] },
-    { name: 'CentroBespoke', imgURl:'https://vivelaera.com/wp-content/uploads/2024/05/WH22DBH570GV_4.jpg', types: ['lavadoras','secadoras'] },
+    { name: 'CentroBespoke', imgURl:'https://vivelaera.com/wp-content/uploads/2024/05/WH22DBH570GV_4.jpg', types: ['laundry',] },
     { name: 'FrontalWF', imgURl: 'https://www.elpalaciodehierro.com/on/demandware.static/-/Sites-palacio-master-catalog/default/dwf6750753/images/38499949/large/38499949_x1.jpg', types: ['lavadoras'] },
     { name: 'LavadoraWT', imgURl: 'https://i5.walmartimages.com/asr/53cda4a7-9c1f-4cfe-b0eb-3c4c9ed49108.6b2874d1ecf3cb150492f8092f90aec8.png?odnHeight=612&odnWidth=612&odnBg=FFFFFF', types: ['lavadoras'] },
     { name: 'Lavadora', imgURl: 'https://i5-mx.walmartimages.com/mg/gm/1p/images/product-images/img_large/00880609218772l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF', types: ['lavadoras'] },
@@ -32,7 +34,10 @@ const House = ({ onSelect }) => {
 
   return (
     <div className={styles.container}>
+      <div>
       <h2>Seleccione un tipo de equipo</h2>
+      <Link to='/' className={styles.buttonHomePage}>Homepage</Link>
+      </div>
       
       {/* Selector para filtrar */}
       <select
@@ -47,6 +52,7 @@ const House = ({ onSelect }) => {
         <option value="lavasecadoras">Lavasecadoras</option>
         <option value="estufas">Estufas</option>
         <option value="microondas">Microondas</option>
+        <option value="laundry">Laundry</option>
       </select>
 
       <div className={styles.subContainer}>
