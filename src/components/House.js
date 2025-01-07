@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 const House = ({ onSelect }) => {
   const equipmentOptions = [
+    { name: 'LavadoraWA', imgURl:'https://images.samsung.com/is/image/samsung/mx-top-loader-wa17j6730lv-wa17j6730lv-ax-frontblack-63609451?$624_624_PNG$', types: ['lavadoras'] },
     { name: 'TCombo', imgURl: 'https://cdn.homedepot.com.mx/productos/224225/224225-d.jpg', types: ['lavasecadoras'] },
     { name: 'RefrigeradorRR', imgURl:'https://cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/202408/29/00104721227611____19__1200x1200.jpg', types: ['refrigeradores'] },
     { name: 'RefrigeradorD', imgURl: 'https://i5-mx.walmartimages.com/mg/gm/1p/images/product-images/img_large/00880609014719l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF', types: ['refrigeradores'] },
@@ -18,6 +19,7 @@ const House = ({ onSelect }) => {
     { name: 'Lavadora', imgURl: 'https://i5-mx.walmartimages.com/mg/gm/1p/images/product-images/img_large/00880609218772l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF', types: ['lavadoras'] },
     { name: 'Estufa', imgURl: 'https://i5-mx.walmartimages.com/samsmx/images/product-images/img_large/981004685l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF', types: ['estufas'] },
     { name: 'Lavasecadora', imgURl: 'https://i5-mx.walmartimages.com/samsmx/images/product-images/img_large/981022018l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF', types: ['lavasecadoras'] },
+    { name: 'SecadoraD', imgURl: 'https://images.samsung.com/is/image/samsung/p6pim/mx/dvg24bb8900dax/gallery/mx-dv8900b-dvg24bb8900dax-534895211?$684_547_PNG$', types: ['secadoras'] },
     { name: 'Secadora', imgURl: 'https://i5.walmartimages.com/asr/ff1b7876-648e-48a8-b8b2-944b0eca0d4f.327452761c0030d72b7b80984eacf48d.png?odnHeight=612&odnWidth=612&odnBg=FFFFFF', types: ['secadoras'] },
     { name: 'EstufaS', imgURl: 'https://http2.mlstatic.com/D_NQ_NP_720146-MLA48680778505_122021-O.webp', types: ['estufas'] }, 
     { name: 'Microondas', imgURl: 'https://petenattiar.vtexassets.com/arquivos/ids/207973/HORNO-SAMSUNG-MG23-CON-GRILL-23LTS-SILVER.jpg?v=637932513797200000', types: ['microondas'] },
