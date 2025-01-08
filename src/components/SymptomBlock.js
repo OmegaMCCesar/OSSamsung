@@ -21,7 +21,9 @@ const SRC002 = 'SRC002-AJUSTE/ALINEACION/CONFIGURACION';
 const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
   const symptomBlocks = {
     'select(bisagra)': [{simtom:SRC015B, description:'Si la bisagra esta dañada, la puerta no cerrara de manera correcta, provocando ruidos y desgaste en la puerta'}],
-    ' 5B03-DIAPHRAGM ':[{simtom:SRC002, description:'Si el empaque de la puerta esta dañado, la puerta no cerrara de manera correcta, provocando fugas de aire y entrada de calor al interior del refrigerador'}],
+    'DR20-FREEZER DOOR GLASS(TRIM KIT)':[{simtom:SRC011, description:'Ya sea que el panel sea cambiado por pedido del cliente o algun daño fisico usaremos estos codigos de cierre'}],
+    'DR21-REFRIGERATOR DOOR GLASS(TRIM KIT)':[{simtom:SRC011, description:'Ya sea que el panel sea cambiado por pedido del cliente o algun daño fisico us'}],
+    'DR17-REFRIGERATOR GASKET':[{simtom:SRC002, description:'Si el empaque de la puerta esta dañado, la puerta no cerrara de manera correcta, provocando fugas de aire y entrada de calor al interior del refrigerador'}],
     '4F14-HINGE COVER':[{simtom:SRC015B, description:'Si la bisagra esta dañada, la puerta no cerrara de manera correcta, provocando ruidos y desgaste en la puerta'}],
     '4B09-GAS LEAKAGE ':[{simtom:SRC022,description:'Si necesitamos cambiar la valvula de 3 vias usaremos estos codigos para cerrar la OS'}],
     '5C02-WATER-VALVE ':[{simtom:SRC029,description:'Si los dispensadores de detergente no estan funcionando correctamente, es posible que la valvula de agua este dañada o los motores de los dispensadores. Al ser una parte conectada alas v alvula de agua usaremos estos codigos para cerrar de manera correcta la OS'}],
@@ -62,7 +64,7 @@ const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
     '4C05-EVAPORATOR':[{simtom:'SRC022-FUGA/FUGA',description:'Cualquier perdida de gas por desgaste del condensador es considerada fuga de gas'}],
     '4B09-GAS LEAKAGE':[{simtom:'SRC022-FUGA/FUGA(GAS LEAKAGE)',description:'Cualquier fuga que pueda ser reparada en la cual no se cambia piezas, a excepcion de dryer es gas leakage'},{simtom:'SRC022-FUGA/FUGA(FUGA INTERNA)',description:'Usar estos codigos para fuga interna y cambio fisico'}],
     '4C08-AMBIENT SENSOR(ELECTRONIC)':[{simtom:'SRC021-CALENTAMIENTO/REFRIGERACION(SENSOR ELECTRONIC)',description:'Usamos este codigo cuado tenemos un enfriamento pobre o sobre enfriamiento, ya que los sensores termistores ya no marcan una lectura correcta de la temperatura hambiente'}],
-    'BR13-WATER VALVE(ICE/WATER)':[{simtom:'SRC029-PROVEDOR DE AGUA',description:'Cuando la fabrica de hielos no hace hielos o el refrigerador no despacha agua, puede ser sintoma de valvulas dañadas, una vez cambiando la pieza usaremos este codigo'}],
+    'BR13-WATER VALVE(ICE/WATER)':[{simtom:'SRC029-PROVEDOR DE AGUA',description:'Cuando la fabrica de hielos no hace hielos o el refrigerador no despacha agua, puede ser sintoma de valvulas dañadas,en el caso de la maquina de hielos tampien tenemos que contemplar la pipeta una vez cambiando la pieza usaremos este codigo'}],
     'BR13-WATER VALVE(ICE/WATER) ':[{simtom:'SRC029-PROVEDOR DE AGUA ',description:'Cuando la fabrica de hielos no hace hielos o el refrigerador no despacha agua, puede ser sintoma de un filtro sucio o tapado, una vez cambiando la pieza usaremos este codigo'}],
     'BR07-ICE MAKER':[{simtom:'SRC013-PROBLEMAS DE OPERACION(IM)',description:'Usamos este codigo ya revisamos los demas componentes involucrados para la fabricacion de hielos, y se cambia la ice maker'}],
     'AR41-HOT PIPE':[{simtom:'SRC022-FUGA/FUGA**',description:'Usar este codigo en fuga interna'}],
