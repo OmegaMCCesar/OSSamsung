@@ -105,7 +105,7 @@ const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
       {symptomBlocks[selectedBlock] ? symptomBlocks[selectedBlock].map((symptom) => (
         <div key={symptom.simtom}  className={styles.option}>
           <button onClick={() => onSymptomSelect(symptom.simtom)} >{symptom.simtom}</button>
-          <textarea readOnly>{symptom.description}</textarea>
+          <textarea value={symptom.description} readOnly>{symptom.description}</textarea>
         </div>       
       )):(<p> No se a a encontrado bloque de sintoma</p>)}
     </div>
