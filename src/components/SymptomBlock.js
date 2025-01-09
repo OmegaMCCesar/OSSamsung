@@ -7,6 +7,7 @@ const SRC030M = ' SRC030-PROBLEMA DE ROTACION  ';
 const SRC029 = 'SRC029-PROVEEDOR DE AGUA ';
 const SRC022 = ' SRC022-FUGA/FUGA  ';
 const SCR021 = 'SRC021-CALENTAMIENTO/REFRIGERACION ';
+const SRC021S = 'SRC021-CALENTAMIENTO/REFRIGERACION.';
 const SRC015B = 'SRC015-RUIDO '; /* Codigos de cierre para bisagras */
 const SRC013 = ' SRC013-PROBLEMA DE OPERACION ';
 const SRC013MEC = '  SRC013-PROBLEMAS DE OPERACION  '
@@ -20,6 +21,8 @@ const SRC002 = 'SRC002-AJUSTE/ALINEACION/CONFIGURACION';
 
 const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
   const symptomBlocks = {
+    'select(ESPREA)':[{simtom:SRC021S, description:'Todas las estufas Samsung cuentan con espreas de gas LP, si es necesario cambiar las espreas por unas de gas natural usamos estos codigos'}],
+    'select(accesorios)':[{simtom:SRC011, description:'Si el cliente solicita el cambio de esta pieza por daño fisico o estetico usaremos estos codigos de cierre'}],
     '4J10-PACKAGING':[{simtom:SRC011, description:'Si el cliente solicita el cambio de esta pieza por daño fisico o estetico usaremos estos codigos de cierre'}],
     'select(bisagra)': [{simtom:SRC015B, description:'Si la bisagra esta dañada, la puerta no cerrara de manera correcta, provocando ruidos y desgaste en la puerta'}],
     'DR20-FREEZER DOOR GLASS(TRIM KIT)':[{simtom:SRC011, description:'Ya sea que el panel sea cambiado por pedido del cliente o algun daño fisico usaremos estos codigos de cierre'}],

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 const House = ({ onSelect }) => {
   const equipmentOptions = [
+    { name: 'Refrigerador', imgURl: 'https://elektra.vtexassets.com/arquivos/ids/9300623-800-auto?v=638696270783300000&width=800&height=auto&aspect=true' ,types: ['refrigeradores'] },
     { name: 'LavadoraWA', imgURl:'https://images.samsung.com/is/image/samsung/mx-top-loader-wa17j6730lv-wa17j6730lv-ax-frontblack-63609451?$624_624_PNG$', types: ['lavadoras'] },
     { name: 'TCombo', imgURl: 'https://cdn.homedepot.com.mx/productos/224225/224225-d.jpg', types: ['lavasecadoras'] },
     { name: 'RefrigeradorRR', imgURl:'https://cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/202408/29/00104721227611____19__1200x1200.jpg', types: ['refrigeradores'] },
