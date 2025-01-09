@@ -1,0 +1,43 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .question-card, .result-screen, .home-screen {
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  h1, h2, h3 {
+    text-align: center;
+  }
+  
+  .diagnosis {
+    margin-top: 20px;
+  }
+  
+  .options {
+    margin-top: 10px;
+  }
+  
+  .home-screen {
+    text-align: center;
+  }
+  

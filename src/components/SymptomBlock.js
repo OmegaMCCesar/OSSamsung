@@ -20,9 +20,11 @@ const SRC002 = 'SRC002-AJUSTE/ALINEACION/CONFIGURACION';
 
 const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
   const symptomBlocks = {
+    '4J10-PACKAGING':[{simtom:SRC011, description:'Si el cliente solicita el cambio de esta pieza por daño fisico o estetico usaremos estos codigos de cierre'}],
     'select(bisagra)': [{simtom:SRC015B, description:'Si la bisagra esta dañada, la puerta no cerrara de manera correcta, provocando ruidos y desgaste en la puerta'}],
     'DR20-FREEZER DOOR GLASS(TRIM KIT)':[{simtom:SRC011, description:'Ya sea que el panel sea cambiado por pedido del cliente o algun daño fisico usaremos estos codigos de cierre'}],
     'DR21-REFRIGERATOR DOOR GLASS(TRIM KIT)':[{simtom:SRC011, description:'Ya sea que el panel sea cambiado por pedido del cliente o algun daño fisico us'}],
+    'DR23-HANDLE':[{simtom:SRC011, description:'Si el cliente solicita cambio de manija por daño fisico o estetico usaremos estos codigos de cierre'}],
     'DR17-REFRIGERATOR GASKET':[{simtom:SRC002, description:'Si el empaque de la puerta esta dañado, la puerta no cerrara de manera correcta, provocando fugas de aire y entrada de calor al interior del refrigerador'}],
     '4F14-HINGE COVER':[{simtom:SRC015B, description:'Si la bisagra esta dañada, la puerta no cerrara de manera correcta, provocando ruidos y desgaste en la puerta'}],
     '4B09-GAS LEAKAGE ':[{simtom:SRC022,description:'Si necesitamos cambiar la valvula de 3 vias usaremos estos codigos para cerrar la OS'}],
