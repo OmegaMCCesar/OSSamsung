@@ -4,19 +4,33 @@
     align-items: center;
   }
 
+  .subContainerHead{
+    display: flex;
+    background-color: black;
+    padding: 1vh;
+  }
+
   .butt{
     background-color: white;
+  }
+
+  .search{
+    margin: auto 2vh;
+    padding: 1vh;
+    height: 100%;
+    
+
   }
 
   .buttonHomePage{
     background-color: #f9f9f9;
     text-decoration: none;
     color: black;
-    margin: 1vh 22vh;
-    justify-content: center;
     border: solid 1px #ccc;  
     border-radius: 1vh;
     padding: 1vh;
+    height: 100%;
+    margin: auto 3vh;
   }
 
   .subContainer
@@ -51,6 +65,10 @@
   .imgUHorno{
     width: 20%;
     margin: 5% auto;
+  }
+
+  h2{
+    color: white;
   }
 
 
