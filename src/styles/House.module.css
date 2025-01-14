@@ -75,8 +75,8 @@
   /* src/styles/House.module.css */
 
 .filter {
-  margin: 10px 0 20px; /* Espaciado superior e inferior */
-  padding: 10px; /* Espaciado interno */
+  margin: auto 3vh; /* Espaciado superior e inferior */
+  padding: 6px; /* Espaciado interno */
   font-size: 16px; /* Tamaño de texto */
   color: #333; /* Color del texto */
   background-color: #f9f9f9; /* Fondo claro */
