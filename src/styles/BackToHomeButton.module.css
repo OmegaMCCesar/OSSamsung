@@ -1,7 +1,8 @@
 /* src/styles/BackToHomeButton.module.css */
 .backButton {
+    width: 12%;
     position: fixed;
-    bottom: 20px;
+    bottom: 86vh;
     left: 20px;
     padding: 10px 20px;
     font-size: 1rem;
