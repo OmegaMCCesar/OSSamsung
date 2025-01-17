@@ -21,6 +21,7 @@ const SRC002 = 'SRC002-AJUSTE/ALINEACION/CONFIGURACION';
 
 const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
   const symptomBlocks = {
+    'select(DOOR)':[{simtom:'SRC013-PROBLEMAS DE OPERACION(DOOR)', description:'Si la puerta no cierra de manera correctamente o esta dañada , usaremos los siguientes codigos de cierre'}],
     'select(WIRE HARNESS)':[{simtom:SRC013A, description:'Si el arnes esta dañado, no permitira el paso de corriente al equipo, por lo que no encendera'}],
     'select(POWER CORD)':[{simtom:SRC012, description:'Si el cable de corriente esta dañado, no permitira el paso de corriente al equipo, por lo que no encendera'}],
     'select(HANDLE)':[{simtom:SRC011, description:'Si el cliente solicita cambio de manija por daño fisico o estetico usaremos estos codigos de cierre'}],
