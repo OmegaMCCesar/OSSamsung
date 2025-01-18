@@ -64,6 +64,7 @@ const House = ({ onSelect }) => {
         <option value="microondas">Microondas</option>
         <option value="laundry">Laundry</option>
       </select>
+      <Link to='/búzon' className={styles.buttonHomePage}>Búzon</Link>
       </div>
       
       

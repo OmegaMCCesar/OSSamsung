@@ -5,6 +5,7 @@ import Homepage from './components/Homepage';
 import HomeScreen from './diagnosticTech/screens/HomeScreen';
 import DiagnosticScreen from './diagnosticTech/screens/DiagnosticScreen';
 import ResultScreen from './diagnosticTech/screens/ResultScreen';
+import ContactForm from './components/ContactForm';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <Route path="/diagnostic" element={<DiagnosticScreen />} />
       <Route exact path="/homeScreen" element={<HomeScreen />} />
       <Route path="/result" element={<ResultScreen />} />
+      <Route path='/búzon' element={<ContactForm />} />
     </Routes>
    </Router>
   );
