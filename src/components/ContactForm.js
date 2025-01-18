@@ -36,7 +36,7 @@ const ContactForm = () => {
         <input type="email" name="user_email" className={styles.input} required />
       </div>
       <div className={styles.formField}>
-        <label className={styles.label}>Agrega el producto o duda para codigo de cieere no encontrado</label>
+        <label className={styles.label}>Agrega el producto o duda para codigo de cierre no encontrado</label>
         <textarea name="message" className={styles.textarea} required />
       </div>
       <input type="submit" value="Enviar" className={styles.button} />
