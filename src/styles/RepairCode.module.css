@@ -7,5 +7,16 @@
   margin: 10px;
 }
 
+.ndf{
+  border: 1px solid black;
+  margin: 2vh auto;
+  width: 50%;
+  border-radius: 1vh;
+}
+
+.textTareaNDF{
+  height: 14vh;
+}
+
   
   
