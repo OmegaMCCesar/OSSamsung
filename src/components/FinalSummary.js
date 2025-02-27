@@ -18,12 +18,12 @@ const FinalSummary = ({ selections }) => {
        {selections.finalRepair === 'M09-AJUSTE' && <div>
           <h3>Proceso correcto del cierre de boletin RT5300 , RT6300</h3>   
            <p>Aplicar los boletines de servicio para estos modelos,<strong>1 Boletin: Actualizacion de sowftware.</strong> Los cuales se encuentran en GSPN, <br /><strong>2 Boletin: Inspeccion de ductos, correcto sellado de puerta, uso de arandela y camara endoscopica</strong><br />La aplicacion del primer boletin no inhibe la aplicacion del segundo boletin.</p>
-           <p>Una vez agregados los codigos correctos generaremos la saw para el extra de pago en mano<br/>de esta forma se pagara 200 mas 160 de la extra saw, es necesario subir toda la informacion<br/>solicitada, El RT adjunto, evidencia de que se utilizo la camara endoscopica y la saw indicando<br/>"Pago de extra mano, aplicacion de service boletin"  </p> 
+           <p>Una vez agregados los codigos correctos generaremos la saw para el pago de mano extra</p> 
     
         </div>}
         {selections.finalRepair === 'M09-AJUSTE.' && <div>
           <h3>Cierre en caso de cambio de espreas</h3>
-          <p>Recordemos que al hacer cambio de espreas tenemos que generar la SAW para el pago de 160 extra, mas pago de espreas.</p>
+          <p>Recordemos que al hacer cambio de espreas tenemos que generar la SAW para el pago mano extra, mas pago de espreas.</p>
           </div>}
     </div>
   );
