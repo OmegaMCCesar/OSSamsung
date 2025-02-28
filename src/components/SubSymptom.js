@@ -11,10 +11,12 @@ const SubSymptom = ({ selectedSymptom, onSubSymptomSelect }) => {
 const HL1 = ' HL1-ENCIENDE, PERO NO OPERA ';
 const HL2 = 'HL2-OPERACION INTERMITENTE ';
 const C94 = 'C94-DOOR ALIGMENT';
+const C94P = 'C94P-DOOR ALIGMENT ';
 
 
 
   const subSymptoms = {
+    'SRC002-AJUSTE/ALINEACION/CONFIGURACION ':[C94P],
     'SRC002-AJUSTE/ALINEACION/CONFIGURACION':[C94],
     ' SRC013-PROBLEMA DE OPERACION ' : [HL1, HL2],
     'FAUNA ENCONTRADA EN EQUIPO':[],
