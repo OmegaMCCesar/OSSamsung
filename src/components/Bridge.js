@@ -82,7 +82,7 @@ const Bridge = () => {
       {showFinalSummary && (
         <FinalSummary selections={selections} onBackToHome={handleBackToHome} />
       )}
-      <BackToHomeButton onBackToHome={handleBackToHome} />
+      {selections.equipment !== null && <BackToHomeButton onBackToHome={handleBackToHome} />}
     </div>
   );
 }

@@ -86,17 +86,18 @@ const RepairCode = ({ selectedSubSymptom, onRepairSelect }) => {
   };
 
   const options = repairOptions[selectedSubSymptom];
+  const NDF = 'En el caso de los equipos que no tienen ningun problema de operacion o funcional, y el problema es causado por algun motivo ageno al equipo, como una mala instalacion (No tener las adecuaciones minimas indicadas en el manual de usuario), o un mal uso por parte del cliente, usaremos el codigo para NDF SRC008-OTROS PROBLEMAS'
 
   return (
     <div className={styles.container}>
       <h2>Seleccione el código de reparación para {selectedSubSymptom}</h2>
       {options ? (
-        options.map((repairOption) => (
-          <div >
+        options.map((repairOption, Index) => (
+          <div key={Index} >
             {repairOption === 'SRC008-OTROS PROBLEMAS' &&
              <div className={styles.ndf}>
               <h4>NDF '(No defecto)'</h4>
-              <textarea className={styles.textTareaNDF} readOnly>En el caso de los equipos que no tienen ningun problema de operacion o funcional, y el problema es causado por algun motivo ageno al equipo, como una mala instalacion('No tener las adecuaciones minimas indicadas en el manual de usuario'), o un mal uso por parte del cliente, usaremos el codigo para NDF 'SRC008-OTROS PROBLEMAS'</textarea>
+              <textarea value={NDF} className={styles.textTareaNDF} readOnly></textarea>
               </div>}
             <button key={repairOption} onClick={() => onRepairSelect(repairOption)} className={styles.option} >{repairOption}</button>
           </div>

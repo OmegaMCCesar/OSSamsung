@@ -49,7 +49,6 @@ const Home = ({ onSelect }) => {
             <div className={styles.containerCard}>
             <img className={styles.image} src={equipment.imgURl} alt={equipment.name} />
             </div>
-            <p>{equipment.name}</p>
           </div>
         ))}
       </div>
