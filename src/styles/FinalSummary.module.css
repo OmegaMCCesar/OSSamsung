@@ -15,7 +15,7 @@ body {
   border: 3px solid #000000; /* Borde negro */
   margin: 20px auto;
   border-radius: 5px;
-  width: 90%; /* Ajustado para pantallas pequeñas */
+  width: 80%; /* Ajustado para pantallas pequeñas */
   max-width: 600px; /* Limita el ancho máximo */
 }
 
@@ -67,8 +67,9 @@ h2 {
 /* Estilos responsivos para dispositivos móviles */
 @media (max-width: 480px) {
   .container {
-    width: 95%;
-    padding: 15px;
+    width: 85%;
+    padding: 14px;
+    margin: 1vh 1.5vh;
   }
 
   h2 {
