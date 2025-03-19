@@ -1,145 +1,156 @@
+/* Estilos generales */
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  padding: 2vh;
+}
 
-  .subContainerHead{
-    display: flex;
-    background-color: black;
+/* Encabezado y controles */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #111;
+  padding: 2vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  width: 90%;
+  text-align: center;
+}
+
+/* Controles (filtros, búsqueda) */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1vh;
+  width: 100%;
+}
+
+.search {
+  padding: 1vh;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.filter{
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  padding: 0.5vh;
+  border-radius: 1vh;
+}
+
+option{
+  background-color: #000;
+  color: white;
+}
+
+.search::placeholder {
+  color: #fdf3f3d8;
+}
+
+.search:focus, .filter:focus {
+  border-color: #ccc;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Botones */
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1vh;
+  margin-top: 2vh;
+}
+
+.button {
+  background-color: #fff;
+  text-decoration: none;
+  color: #000;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  padding: 1vh 2vh;
+  transition: background 0.3s, color 0.3s;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Contenedor de tarjetas */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  width: 90%;
+}
+
+/* Tarjetas de productos */
+.containerCard{
+  background-color: white;
+  padding: 5vh 2vh;
+  border-radius: 2vh;
+}
+
+.card {
+  width: 200px;
+  cursor: pointer;
+  padding: 15px;
+  border: 1px solid #fff;
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.3);
+}
+
+.image {
+  width: 80%;
+  max-height: 180px;
+  border-radius: 5px;
+}
+
+/* Configuración para tabletas */
+@media (max-width: 768px) {
+  .card {
+    width: 45%;
+  }
+}
+
+/* Configuración para celulares */
+@media (max-width: 480px) {
+  .container {
     padding: 1vh;
   }
 
-  .butt{
-    background-color: white;
-  }
-
-  .search{
-    margin: auto 2vh;
-    padding: 1vh;
-    height: 100%;
-    
-
-  }
-
-  .buttonHomePage{
-    background-color: #f9f9f9;
-    text-decoration: none;
-    color: black;
-    border: solid 1px #ccc;  
-    border-radius: 1vh;
-    padding: 1vh;
-    height: 100%;
-    margin: auto 3vh;
-  }
-
-  .subContainer
-  {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  .grid {
     flex-direction: row;
-    width: 98%;
-  }
-  .option {
-    width: 18%;
-    cursor: pointer;
-    padding: 10px;
-    border: 1px solid #000;
-    margin: 10px;
-    text-align: center;
-    border-radius: 5%;
+    justify-content: center;
+    gap: 10px;
   }
 
-  .option:hover{
-    transform: translateY(-8px);
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+  .card {
+    width: 80%;
   }
-
-  .imgU{
-    width: 94%;
-    margin: 5% auto;
-    height: 30vh;
-  }
-
-  .imgUHorno{
-    width: 20%;
-    margin: 5% auto;
-  }
-
-  h2{
-    color: white;
-  }
-
-
-  /* src/styles/House.module.css */
-
-.filter {
-  margin: auto 3vh; /* Espaciado superior e inferior */
-  padding: 6px; /* Espaciado interno */
-  font-size: 16px; /* Tamaño de texto */
-  color: #333; /* Color del texto */
-  background-color: #f9f9f9; /* Fondo claro */
-  border: 1px solid #ccc; /* Borde sutil */
-  border-radius: 5px; /* Bordes redondeados */
-  outline: none; /* Quitar el borde azul al seleccionar */
-  cursor: pointer; /* Manito al pasar el mouse */
-  transition: all 0.2s ease-in-out; /* Animación sutil */
 }
 
-.filter:hover {
-  background-color: #e6e6e6; /* Fondo más oscuro al pasar el mouse */
-}
-
-.filter:focus {
-  border-color: #007bff; /* Color de borde al enfocarse */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Resplandor */
-}
-
-  
-
-  /*Configuracion para tabletas */
-  @media (max-width:768px) {
-    .option{
-      width: 60%;
-    }
-  }
-
-  /* Configuracion para celulares */
-  @media (max-width:480px){
-
-    .container{
-      width: 100%;
-      align-items: center;
-      padding: 1vh;
-    }
-
-    .subContainer{
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      align-items: center;
-      justify-content: center;
-    }
-
-    h2{
-      width: 100%;
-      font-size: 100%;
-      text-align: center;
-    }
-
-    .option{
-      margin: 3%,auto;
-      width: 35%;
-      height: 20vh;
-    }
-     
-    img{
-      height: 15vh;
-    }
-
-    .imgU{
-      height: 20vh;
-    }
-
-  }

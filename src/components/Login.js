@@ -1,29 +1,36 @@
 // src/components/Login.js
 import React, { useState } from 'react';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../configs/firebase';
 import styles from '../styles/Login.module.css';
 
-function Login({ onLogin, users }) {
-  const [username, setUsername] = useState('');
+function Login({ onLogin }) {
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-  const handleLogin = () => {
-    if (username === 'admin' && password === 'admin123') {
-      onLogin('admin');
-    } else if (users[username] && users[username] === password) {
-      onLogin(username);
-    } else {
-      alert('Usuario o contraseña incorrectos');
+
+  const handleLogin = async () => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      onLogin(user);
+    } catch (error) {
+      setError('Usuario o contraseña incorrectos');
+      console.log(error.message);
+      
     }
   };
 
   return (
     <div className={styles.loginContainer}>
-      <h2>Iniciar Sesión</h2>
+      <h2 className={styles.title} >Iniciar Sesión</h2>
+      {error && <p className={styles.error}>{error}</p>}
       <input
-        type="text"
-        placeholder="Usuario"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        type="email"
+        placeholder="Correo electrónico"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         className={styles.input}
       />
       <input
@@ -39,3 +46,4 @@ function Login({ onLogin, users }) {
 }
 
 export default Login;
+

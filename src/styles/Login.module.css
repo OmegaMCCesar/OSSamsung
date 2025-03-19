@@ -7,8 +7,12 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     width: 300px;
-    margin: auto;
+    margin: 5vh auto;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .title{
+    color: black;
   }
   
   .input {

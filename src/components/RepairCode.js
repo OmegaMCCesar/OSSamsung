@@ -2,13 +2,12 @@
 import React from 'react';
 import styles from '../styles/RepairCode.module.css';
 
-
-
 const SRC009 = 'SRC009-CAMBIAR/ABONAR/DEVOLVER';
 const SRC002 = 'SRC002-AJUSTE/ALINEACION/CONFIGURACION.';
 const SRC002P = 'SRC002-AJUSTE/ALINEACION/CONFIGURACION  ';
 
 const RepairCode = ({ selectedSubSymptom, onRepairSelect }) => {
+
   const repairOptions = {
     'HC1-NO HAY CALEFACCION.':[SRC002],
     'HC2-CALEFACCION DEBIL.':[SRC002,'SRC008-OTROS PROBLEMAS'],

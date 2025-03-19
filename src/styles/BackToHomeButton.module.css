@@ -1,10 +1,10 @@
 /* src/styles/BackToHomeButton.module.css */
 .backButton {
-    width: 10%;
+    width: 20%;
     position: fixed;
-    bottom: 86vh;
-    left: 20px;
-    padding: 10px 20px;
+    bottom: 10vh;
+    left: 4.3%;
+    padding: 10px 10px;
     font-size: 1rem;
     font-weight: bold;
     background-color: #007bff;

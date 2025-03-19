@@ -1,29 +1,58 @@
-.container{
+/* Homepage.module.css */
+
+.container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     height: 100vh;
-}
-
-.h1{
-    margin: 2vh auto;
-    color: white;
-    text-align: center;
-    background-color: black;
-    width: 100%;
-    padding: 2vh;
-}
-
-.comenzar{
-    display: inline-block;
-    text-align: center;
-    margin: 1vh auto;
-    border: solid 1px #ccc;
-    color: black;
-    background-color: #f9f9f9;
+    background-color: #000;
+    color: #fff;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  input:focus {
+    border-color: #ccc;
+    outline: none;
+  }
+  
+  .login, .comenzar {
+    padding: 10px 20px;
+    margin: 10px;
+    border: 2px solid #fff;
+    color: #fff;
     text-decoration: none;
-    padding: 1vh;
-    border-radius: 1vh;
-    font-size: xx-large;
-}
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .login:hover, .comenzar:hover {
+    background-color: #fff;
+    color: #000;
+  }
+  
