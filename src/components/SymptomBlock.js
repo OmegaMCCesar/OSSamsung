@@ -112,12 +112,18 @@ const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
   return (
     <div className={styles.container}>
       <h2>Seleccione el bloque de síntoma para {selectedBlock}</h2>
-      {symptomBlocks[selectedBlock] ? symptomBlocks[selectedBlock].map((symptom) => (
-        <div key={symptom.simtom}  className={styles.option}>
-          <button onClick={() => onSymptomSelect(symptom.simtom)} >{symptom.simtom}</button>
-          <textarea value={symptom.description} readOnly>{symptom.description}</textarea>
-        </div>       
-      )):(<p> No se a a encontrado bloque de sintoma</p>)}
+      {symptomBlocks[selectedBlock] ? (
+        symptomBlocks[selectedBlock].map((symptom, index) => (
+          <div key={index} className={styles.option}>
+            <button onClick={() => onSymptomSelect(symptom.simtom)}>
+              {symptom.simtom}
+            </button>
+            <p>{symptom.description}</p>
+          </div>
+        ))
+      ) : (
+        <p>No se ha encontrado bloque de síntoma</p>
+      )}
     </div>
   );
 };

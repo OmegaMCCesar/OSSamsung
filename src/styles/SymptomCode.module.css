@@ -1,36 +1,77 @@
 .container {
   text-align: center;
+  padding: 1rem;
 }
+
 .option {
   cursor: pointer;
-  padding: 10px;
-  border-radius: 3%;
-  border: 1px solid hsl(0, 0%, 0%);
-  margin: 10px auto;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid hsl(0, 0%, 80%);
+  margin: 1rem auto;
   width: 50%;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.3s ease;
 }
 
-textarea{
-  width: 95%;
-  padding: 2vh;
-  margin: 1vh auto;
+.option:hover {
+  background-color: hsl(0, 0%, 95%);
 }
 
-@media (max-width:450px){
-   
-  .option{
+button {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: hsl(210, 100%, 40%);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: hsl(210, 100%, 35%);
+}
+
+textarea {
+  width: 90%;
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 4px;
+  border: 1px solid hsl(0, 0%, 80%);
+  resize: none; /* Evita que el usuario cambie el tamaño manualmente */
+  overflow: hidden; /* Oculta las barras de desplazamiento */
+  font-size: 1rem;
+}
+
+@media (max-width: 450px) {
+  .option {
     width: 80%;
     margin: 5% auto;
   }
 
-  p{
-    font-size: 50%;
+  p {
+    font-size: 0.875rem;
     margin: 0;
   }
 
-  textarea{
-    width: 90%;
+  button {
+    width: 100%;
+    font-size: 0.875rem;
   }
 
+  textarea {
+    width: 90%;
+    padding: 1rem;
+    margin: 1rem auto;
+    border-radius: 4px;
+    border: 1px solid hsl(0, 0%, 80%);
+    resize: none; /* Evita que el usuario cambie el tamaño */
+    overflow: hidden; /* Oculta las barras de desplazamiento */
+    font-size: 1rem;
+    user-select: none; /* Evita la selección de texto */
+  }
 }

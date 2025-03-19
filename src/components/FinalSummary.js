@@ -1,30 +1,63 @@
-// src/components/FinalSummary.js
 import React from 'react';
 import styles from '../styles/FinalSummary.module.css';
 
 const FinalSummary = ({ selections }) => {
+  const {
+    equipment,
+    block,
+    symptomBlock,
+    subSymptom,
+    repairCode,
+    finalRepair,
+  } = selections;
+
+  const renderAdditionalInfo = () => {
+    switch (finalRepair) {
+      case 'M09-AJUSTE':
+        return (
+          <section>
+            <h3>Proceso correcto del cierre de boletín RT5300, RT6300</h3>
+            <p>
+              Aplicar los boletines de servicio para estos modelos:
+              <br />
+              <strong>1. Boletín:</strong> Actualización de software. Disponible en GSPN.
+              <br />
+              <strong>2. Boletín:</strong> Inspección de ductos, correcto sellado de puerta, uso de arandela y cámara endoscópica.
+              <br />
+              La aplicación del primer boletín no inhibe la aplicación del segundo boletín.
+            </p>
+            <p>
+              Una vez agregados los códigos correctos, generaremos la SAW para el pago de mano extra.
+            </p>
+          </section>
+        );
+      case 'M09-AJUSTE.':
+        return (
+          <section>
+            <h3>Cierre en caso de cambio de espreas</h3>
+            <p>
+              Al realizar el cambio de espreas, es necesario generar la SAW para el pago de mano extra, además del pago de las espreas.
+            </p>
+          </section>
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className={styles.container}>
       <h2>Resumen Final de Cierre</h2>
       <ul className={styles.summaryList}>
-        <li><strong>Equipo seleccionado:</strong> {selections.equipment}</li>
-        <li><strong>Bloque de defecto:</strong> {selections.block}</li>
-        <li><strong>Codigo de síntoma:</strong> {selections.symptomBlock}</li>
-        <li>{selections.subSymptom}</li>
-        <li><strong>Código de reparación:</strong> {selections.repairCode}</li>
-        <li>{selections.finalRepair}</li>
+        <li key="equipment"><strong>Equipo seleccionado:</strong> {equipment}</li>
+        <li key="block"><strong>Bloque de defecto:</strong> {block}</li>
+        <li key="symptomBlock"><strong>Código de síntoma:</strong> {symptomBlock}</li>
+        {subSymptom && <li key="subSymptom">{subSymptom}</li>}
+        <li key="repairCode"><strong>Código de reparación:</strong> {repairCode}</li>
+        {finalRepair && <li key="finalRepair">{finalRepair}</li>}
       </ul>
-      <hr/>
-       {selections.finalRepair === 'M09-AJUSTE' && <div>
-          <h3>Proceso correcto del cierre de boletin RT5300 , RT6300</h3>   
-           <p>Aplicar los boletines de servicio para estos modelos,<strong>1 Boletin: Actualizacion de sowftware.</strong> Los cuales se encuentran en GSPN, <br /><strong>2 Boletin: Inspeccion de ductos, correcto sellado de puerta, uso de arandela y camara endoscopica</strong><br />La aplicacion del primer boletin no inhibe la aplicacion del segundo boletin.</p>
-           <p>Una vez agregados los codigos correctos generaremos la saw para el pago de mano extra</p> 
-    
-        </div>}
-        {selections.finalRepair === 'M09-AJUSTE.' && <div>
-          <h3>Cierre en caso de cambio de espreas</h3>
-          <p>Recordemos que al hacer cambio de espreas tenemos que generar la SAW para el pago mano extra, mas pago de espreas.</p>
-          </div>}
+      <hr />
+      {renderAdditionalInfo()}
     </div>
   );
 };
