@@ -7,6 +7,7 @@ import AddBlockCodeClosing from './components/AddBlockCodeClosing';
 import AddUser from './components/AddUser';
 import { AuthProvider } from './contexts/AuthContext';
 import Login from './components/Login';
+import House3 from './components/House3';
 /* import PrivateRoute from './components/PrivateRoute'; */
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         } />
       <Route path='/addUser' element={<AddUser />} />
       <Route path='/login' element={<Login onLogin={handleLogin} />} />
+      <Route path='/3.0' element={<House3 />} />
     </Routes>
    </Router>
    </AuthProvider>  

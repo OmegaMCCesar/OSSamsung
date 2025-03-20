@@ -1,36 +1,13 @@
 import { Link } from 'react-router-dom';
 import styles from '../styles/Homepage.module.css';
 import { useState } from 'react';
-/* import { db } from '../configs/firebase';
-import { collectionGroup, getDocs, where, query} from 'firebase/firestore'; */
 
 
 const Homepage = () => {
 
   const [loginInp, setLoginInp] = useState('');
 
-/* const getInfo = async () => {
-  
 
-  const infoRef = collectionGroup(db, "bloques");
-  const resonseFirebs = await getDocs(infoRef);
-    
-     resonseFirebs.forEach((linea) => {
-      console.log(linea.data());
-      
-     })
-  const filterCategori = query(collectionGroup(db,"bloques"),where("category", "==", "REF"));
-  const querySnapshot = await getDocs(filterCategori);
-     
-
-     querySnapshot.forEach((doc) => {
-      console.log(doc.id, ' => ', doc.data());
-      
-     })
-}
-
-getInfo() */
-console.log(loginInp);
 
   
   return (

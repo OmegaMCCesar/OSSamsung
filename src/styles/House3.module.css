@@ -1,0 +1,239 @@
+/* House3.module.css */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .searchInput {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    transition: border-color 0.3s;
+  }
+  
+  .searchInput:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .categorySelect {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+  }
+  
+  .categorySelect:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .results {
+    margin-top: 20px;
+  }
+  
+  /* Lista de modelos */
+  .modelList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Imágenes generales */
+  .img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
+  /* Ajuste específico para imágenes de bloques de defecto */
+  .defectBlockList .img,
+  .defectBlocks .img {
+    max-width: 120px;
+    max-height: 120px;
+    object-fit: cover;
+  }
+  
+  /* Bloques de defecto */
+  .defectBlockList {
+    margin-top: 20px;
+  }
+  
+  .defectBlocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .block {
+    width: 10%;
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .containerBlocks{
+    display: flex;
+    justify-content: space-between;
+  }
+  /* Botones de navegación */
+  .backButton {
+    margin-bottom: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .volver{
+    margin: 2rem 1rem;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    padding: 0.5rem;
+  }
+  
+  .backButton:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Listas para síntomas, sub-síntomas, reparaciones y sub-reparaciones */
+  .symptomCodeList,
+  .subSymptomCodeList,
+  .repairCodeList,
+  .subRepairCodeList {
+    margin-top: 20px;
+  }
+  
+  .symptomCodeList ul,
+  .subSymptomCodeList ul,
+  .repairCodeList ul,
+  .subRepairCodeList ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .clickableItem {
+    padding: 8px;
+    background-color: #f0f8ff;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .clickableItem:hover {
+    background-color: #e0f0ff;
+  }
+  
+  /* Pantalla de resumen */
+  .summary {
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    background-color: #f1faff;
+  }
+  
+  .summary h2 {
+    margin-bottom: 15px;
+  }
+  
+  .summary p {
+    margin: 8px 0;
+  }
+  
+  /* Botón para reiniciar la selección */
+  .resetButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .resetButton:hover {
+    background-color: #218838;
+  }
+  
+  /* Media queries para diseño responsivo */
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .filters {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .searchInput {
+      margin-right: 0;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+  
+    .categorySelect {
+      width: 100%;
+    }
+  
+    .modelList,
+    .defectBlocks {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  
+    .backButton,
+    .resetButton {
+      width: 100%;
+    }
+  }
+  

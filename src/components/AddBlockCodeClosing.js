@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { db } from '../configs/firebase';
-import { doc, collection, addDoc } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import styles from '../styles/AddBlockCodeClosing.module.css';
 
@@ -43,47 +43,91 @@ const AddBlockCodeClosing = () => {
       subRepairCode,
     } = formData;
 
-    if (
-      !category ||
-      !productType ||
-      !productName ||
-      !productModel ||
-      !modelImageUrl ||
-      !defectBlock ||
-      !defectBlockImageUrl ||
-      !symptomCode ||
-      !subSymptomCode ||
-      !repairCode ||
-      !subRepairCode
-    ) {
+    if (!category || !productType || !productName || !productModel || !modelImageUrl || !defectBlock || !defectBlockImageUrl || !symptomCode || !subSymptomCode || !repairCode || !subRepairCode) {
       alert('Por favor, completa todos los campos obligatorios.');
       return;
     }
 
     try {
-      // Corrección en la estructura de la referencia de Firebase
-      const productTypeDocRef = doc(db, 'lineas', category, 'tipos', productType);
-      const modelosCollectionRef = collection(productTypeDocRef, 'modelos');
-      const modeloDocRef = doc(modelosCollectionRef, productModel);
-      const bloquesCollectionRef = collection(modeloDocRef, 'bloques');
+      const modelDocRef = doc(db, 'products', category, 'tipos', productType, 'modelos', productModel);
+      const modelDocSnap = await getDoc(modelDocRef);
 
-      const dataToSave = {
-        productName,
-        productModel,
+      let newDefectBlock = {
         defectBlock,
-        symptomCode,
-        subSymptomCode,
-        repairCode,
-        subRepairCode,
-        category,
-        imagenes: {
-          modelo: modelImageUrl,
-          bloqueDefecto: defectBlockImageUrl,
-        },
-        timestamp: new Date(),
+        defectBlockImageUrl,
+        symptoms: [
+          {
+            symptomCode,
+            subSymptoms: [
+              {
+                subSymptomCode,
+                repairCodes: [
+                  {
+                    repairCode,
+                    subRepairCodes: [subRepairCode]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       };
 
-      await addDoc(bloquesCollectionRef, dataToSave);
+      if (modelDocSnap.exists()) {
+        const modelData = modelDocSnap.data();
+        let defectBlocks = modelData.defectBlocks || [];
+        
+        let blockIndex = defectBlocks.findIndex(block => block.defectBlock === defectBlock);
+        
+        if (blockIndex !== -1) {
+          let symptoms = defectBlocks[blockIndex].symptoms || [];
+          
+          let symptomIndex = symptoms.findIndex(sym => sym.symptomCode === symptomCode);
+          
+          if (symptomIndex !== -1) {
+            let subSymptoms = symptoms[symptomIndex].subSymptoms || [];
+            
+            let subSymptomIndex = subSymptoms.findIndex(subSym => subSym.subSymptomCode === subSymptomCode);
+            
+            if (subSymptomIndex !== -1) {
+              let repairCodes = subSymptoms[subSymptomIndex].repairCodes || [];
+              
+              let repairIndex = repairCodes.findIndex(repair => repair.repairCode === repairCode);
+              
+              if (repairIndex !== -1) {
+                if (!repairCodes[repairIndex].subRepairCodes.includes(subRepairCode)) {
+                  repairCodes[repairIndex].subRepairCodes.push(subRepairCode);
+                }
+              } else {
+                repairCodes.push({ repairCode, subRepairCodes: [subRepairCode] });
+              }
+              subSymptoms[subSymptomIndex].repairCodes = repairCodes;
+            } else {
+              subSymptoms.push({ subSymptomCode, repairCodes: [{ repairCode, subRepairCodes: [subRepairCode] }] });
+            }
+            symptoms[symptomIndex].subSymptoms = subSymptoms;
+          } else {
+            symptoms.push({
+              symptomCode,
+              subSymptoms: [{ subSymptomCode, repairCodes: [{ repairCode, subRepairCodes: [subRepairCode] }] }]
+            });
+          }
+          defectBlocks[blockIndex].symptoms = symptoms;
+        } else {
+          defectBlocks.push(newDefectBlock);
+        }
+        
+        await updateDoc(modelDocRef, { defectBlocks });
+      } else {
+        await setDoc(modelDocRef, {
+          productName,
+          productModel,
+          category,
+          imagenes: { modelo: modelImageUrl },
+          defectBlocks: [newDefectBlock],
+          timestamp: new Date(),
+        });
+      }
 
       setFormData({
         category: '',
@@ -109,46 +153,30 @@ const AddBlockCodeClosing = () => {
   return (
     <div className={styles.container}>
       <Link to="/Bridge" className={styles.buttonHomePage}>Volver</Link>
-      <Link to="/addUser" className={styles.buttonHomePage} >Añadir Usuario</Link>
+      <Link to="/addUser" className={styles.buttonHomePage}>Añadir Usuario</Link>
       <h3>Añadir cierre de producto</h3>
       <form onSubmit={handleSubmit} className={styles.form}>
         <label>Categoría:</label>
-        <select name="category" value={formData.category} onChange={handleChange} className={styles.select}>
+        <select name="category" value={formData.category} onChange={handleChange} className={styles.input}>
           <option value="">Seleccionar categoría</option>
-          <option value="WSM">WSM</option>
           <option value="REF">REF</option>
+          <option value="WSM">WSM</option>
+          <option value="AA">AA</option>
+          <option value="OTRO">OTRO</option>
         </select>
-
-        <label>Tipo del producto:</label>
-        <input type="text" name="productType" value={formData.productType} onChange={handleChange} className={styles.input} />
-
-        <label>Nombre del producto:</label>
-        <input type="text" name="productName" value={formData.productName} onChange={handleChange} className={styles.input} />
-
-        <label>Modelo del producto:</label>
-        <input type="text" name="productModel" value={formData.productModel} onChange={handleChange} className={styles.input} />
-
-        <label>URL de la imagen del modelo:</label>
-        <input type="text" name="modelImageUrl" value={formData.modelImageUrl} onChange={handleChange} className={styles.input} />
-
-        <label>Bloque de defecto:</label>
-        <input type="text" name="defectBlock" value={formData.defectBlock} onChange={handleChange} className={styles.input} />
-
-        <label>URL de la imagen del bloque de defecto:</label>
-        <input type="text" name="defectBlockImageUrl" value={formData.defectBlockImageUrl} onChange={handleChange} className={styles.input} />
-
-        <label>Código de síntoma:</label>
-        <input type="text" name="symptomCode" value={formData.symptomCode} onChange={handleChange} className={styles.input} />
-
-        <label>Código de sub-síntoma:</label>
-        <input type="text" name="subSymptomCode" value={formData.subSymptomCode} onChange={handleChange} className={styles.input} />
-
-        <label>Código de reparación:</label>
-        <input type="text" name="repairCode" value={formData.repairCode} onChange={handleChange} className={styles.input} />
-
-        <label>Código de sub-reparación:</label>
-        <input type="text" name="subRepairCode" value={formData.subRepairCode} onChange={handleChange} className={styles.input} />
-
+        {Object.keys(formData).map((key) => (
+          key !== "category" && (
+            <input
+              key={key}
+              type="text"
+              name={key}
+              value={formData[key]}
+              onChange={handleChange}
+              placeholder={key}
+              className={styles.input}
+            />
+          )
+        ))}
         <button type="submit" className={styles.submitButton}>Añadir</button>
       </form>
     </div>
@@ -156,6 +184,10 @@ const AddBlockCodeClosing = () => {
 };
 
 export default AddBlockCodeClosing;
+
+
+
+
 
 
 
