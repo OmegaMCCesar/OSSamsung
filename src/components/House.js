@@ -21,7 +21,6 @@ const Home = ({ onSelect }) => {
     <div className={styles.container}>
       <div className={styles.header}>
         <h2>Seleccione un tipo de equipo</h2>
-        <Link to='/3.0' >Version 3.0</Link>
         <div className={styles.controls}>
           <select className={styles.filter} value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
             <option value="">Todos</option>
@@ -38,7 +37,10 @@ const Home = ({ onSelect }) => {
           <input type="password" placeholder="ADM" className={styles.search} value={validador} onChange={(e) => setValidador(e.target.value)} />
         </div>
         <div className={styles.buttonContainer}>
-          {validador === 'Ce953112.' && <Link to='/add' className={styles.button}>Añadir</Link>}
+          {validador === 'Ce953112.' && <>
+            <Link to='/add' className={styles.button}>Añadir</Link>
+            <Link to='/3.0' >Version 3.0</Link>
+          </>}
           <Link to='/búzon' className={styles.button}>Búzon</Link>
           <Link to='/' className={styles.button}>Volver a Inicio</Link>
         </div>
