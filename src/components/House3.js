@@ -108,7 +108,7 @@ const House2 = () => {
           <option value="AIR DRESSER">AIR DRESSER</option>
         </select>
       </div>
-      <p className={styles.anuncio}>Los modelos aún se están agregando. En esta sección podrá buscar por el modelo, categoría y tipo. Si aún no aparece el modelo que necesita, envíe su modelo y cuál es su duda.</p>
+      <p className={styles.anuncio}>Los modelos aún se están agregando. En esta sección podrá buscar por el modelo, categoría y tipo. Si aún no aparece el modelo que necesita, envíe su modelo y cuál es su duda al buzon de abajo.</p>
       <Link to='/búzon' className={styles.volver}>Búzon</Link>
 
       <div className={styles.results}>
