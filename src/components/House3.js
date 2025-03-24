@@ -98,10 +98,18 @@ const House2 = () => {
           <option value="">Todas las categorías</option>
           <option value="REF">REF</option>
           <option value="WSM">WSM</option>
-          <option value="AA">AA</option>
-          <option value="OTRO">OTRO</option>
+          <option value="DRY">DRY</option>
+          <option value="MWO">MWO</option>
+          <option value="COOK">COOK</option>
+          <option value="OVEN">OVEN</option>
+          <option value="ACN">ACN</option>
+          <option value="VACUM">VACUM</option>
+          <option value="DW">DW</option>
+          <option value="AIR DRESSER">AIR DRESSER</option>
         </select>
       </div>
+      <p className={styles.anuncio}>Los modelos aún se están agregando. En esta sección podrá buscar por el modelo, categoría y tipo. Si aún no aparece el modelo que necesita, envíe su modelo y cuál es su duda.</p>
+      <Link to='/búzon' className={styles.volver}>Búzon</Link>
 
       <div className={styles.results}>
         {loading && <div>Cargando...</div>}

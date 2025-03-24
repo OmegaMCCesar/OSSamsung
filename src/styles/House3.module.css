@@ -99,14 +99,28 @@
     background-color: #fff;
     border: 1px solid #eee;
     padding: 10px;
-    border-radius: 4px;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
-    flex: 1 1 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1 1 calc(25% - 10px); /* 4 tarjetas por fila (ajusta el gap si es necesario) */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+
+  .anuncio {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #ff6600;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
   
   .block:hover {
     transform: translateY(-3px);
@@ -115,7 +129,10 @@
   
   .containerBlocks{
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-height: 600px; /* Puedes ajustar la altura máxima */
+    overflow-y: auto;
   }
   /* Botones de navegación */
   .backButton {

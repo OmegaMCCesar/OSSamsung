@@ -3,11 +3,13 @@ import React, { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../configs/firebase';
 import styles from '../styles/Login.module.css';
+import { useNavigate } from 'react-router-dom';
 
 function Login({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
 
   const handleLogin = async () => {
@@ -15,6 +17,7 @@ function Login({ onLogin }) {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
       onLogin(user);
+      navigate('/')
     } catch (error) {
       setError('Usuario o contraseña incorrectos');
       console.log(error.message);
