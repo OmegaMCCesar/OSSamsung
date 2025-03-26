@@ -8,6 +8,7 @@ import AddUser from './components/AddUser';
 import Login from './components/Login';
 import House3 from './components/House3';
 import PrivateRoute from './components/PrivateRoute';
+import EditModel from './components/EditModel';
 
 /* import PrivateRoute from './components/PrivateRoute'; */
 
@@ -36,6 +37,7 @@ function App() {
       <Route path='/addUser' element={<AddUser />} />
       <Route path='/login' element={<Login onLogin={handleLogin} />} />
       <Route path='/3.0' element={<House3 />} />
+      <Route path="/edit/:modelID" element={<EditModel />}/>
     </Routes> 
    </Router>
   );

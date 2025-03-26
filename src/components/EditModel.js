@@ -1,26 +1,32 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import useDefectBlocksByCategoryFromModels from '../hooks/useDefectBlocksByCategoryFromModels';
+import styles from '../styles/EditModel.module.css';
 import { db } from '../configs/firebase';
 import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
-import { Link } from 'react-router-dom';
-import styles from '../styles/AddBlockCodeClosing.module.css';
-import LogoutButton from './LogoutButton';
 
-const AddBlockCodeClosing = () => {
+const EditModel = () => {
+  const location = useLocation();
+  const { modelData } = location.state;
+  
+  const { blocks: availableBlocks, loading, error } = useDefectBlocksByCategoryFromModels(modelData.category);
+
   const [formData, setFormData] = useState({
-    category: '',
+    category: modelData.category,
     productType: '',
-    productName: '',
-    productModel: '',
-    modelImageUrl: '',
+    productName: modelData.productName,
+    productModel: modelData.productModel,
+    modelImageUrl: modelData.imagenes.modelo || '',
     defectBlock: '',
     defectBlockImageUrl: '',
     symptomCode: '',
     subSymptomCode: '',
     repairCode: '',
-    subRepairCode: '',
+    subRepairCode: ''
   });
 
   const handleChange = (e) => {
+
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -28,6 +34,28 @@ const AddBlockCodeClosing = () => {
     }));
   };
 
+  const handleBlockChange = (e) => {
+    const selectedBlock = availableBlocks.find(block => block.defectBlock === e.target.value);
+    
+    if (selectedBlock) {
+      const firstSymptom = selectedBlock.symptoms?.[0] || {};
+      const firstSubSymptom = firstSymptom.subSymptoms?.[0] || {};
+      const firstRepairCode = firstSubSymptom.repairCodes?.[0] || {};
+      const firstSubRepairCode = firstRepairCode.subRepairCodes?.[0] || '';
+
+      setFormData({
+        ...formData,
+        defectBlock: selectedBlock.defectBlock,
+        defectBlockImageUrl: selectedBlock.defectBlockImageUrl || '',
+        symptomCode: firstSymptom.symptomCode || '',
+        subSymptomCode: firstSubSymptom.subSymptomCode || '',
+        repairCode: firstRepairCode.repairCode || '',
+        subRepairCode: firstSubRepairCode || ''
+      });
+    }
+    
+  };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     const {
@@ -172,19 +200,6 @@ const AddBlockCodeClosing = () => {
       }
 
       // Reiniciamos el formulario
-      setFormData({
-        category: '',
-        productType: '',
-        productName: '',
-        productModel: '',
-        modelImageUrl: '',
-        defectBlock: '',
-        defectBlockImageUrl: '',
-        symptomCode: '',
-        subSymptomCode: '',
-        repairCode: '',
-        subRepairCode: '',
-      });
 
       alert('Datos enviados correctamente');
     } catch (error) {
@@ -194,53 +209,67 @@ const AddBlockCodeClosing = () => {
 
   return (
     <div className={styles.container}>
-      <Link to="/Bridge" className={styles.buttonHomePage}>
-        Volver
-      </Link>
-      <Link to="/addUser" className={styles.buttonHomePage}>
-        Añadir Usuario
-      </Link>
-      <LogoutButton />
-      <h3>Añadir cierre de producto</h3>
-      <form onSubmit={handleSubmit} className={styles.form}>
+      <h2>Editar Modelo</h2>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <label>Categoría:</label>
-        <select
-          name="category"
-          value={formData.category}
+        <input type="text" value={formData.category} disabled />
+
+        <label>Tipo de Producto:</label>
+        <input 
+          key="2wx23d32cxeq"
+          type="text"
+          name="productType"
+          value={formData.productType}
           onChange={handleChange}
           className={styles.input}
-        >
-          <option value="">Seleccionar categoría</option>
-          <option value="REF">REF</option>
-          <option value="WSM">WSM</option>
-          <option value="DRY">DRY</option>
-          <option value="MWO">MWO</option>
-          <option value="COOK">COOK</option>
-          <option value="OVEN">OVEN</option>
-          <option value="ACN">ACN</option>
-          <option value="VACUM">VACUM</option>
-          <option value="DW">DW</option>
-          <option value="AIR DRESSER">AIR DRESSER</option>
-        </select>
-        {Object.keys(formData).map((key) =>
-          key !== 'category' ? (
-            <input
-              key={key}
-              type="text"
-              name={key}
-              value={formData[key]}
-              onChange={handleChange}
-              placeholder={key}
-              className={styles.input}
-            />
-          ) : null
+        /> 
+
+        <label>Nombre del Producto:</label>
+        <input type="text" value={formData.productName} disabled />
+
+        <label>Modelo del Producto:</label>
+        <input type="text" value={formData.productModel} disabled />
+
+        <label>Imagen del Modelo:</label>
+        <input type="text" value={formData.modelImageUrl} disabled />
+
+        <label>Bloque de Defecto:</label>
+        {loading && <p>Cargando bloques...</p>}
+        {error && <p>Error: {error.message}</p>}
+        {availableBlocks.length > 0 ? (
+          <select value={formData.defectBlock} onChange={handleBlockChange}>
+            <option value="">Selecciona un bloque</option>
+            {availableBlocks.map((block, idx) => (
+              <option key={idx} value={block.defectBlock}>{block.defectBlock}</option>
+            ))}
+          </select>
+        ) : (
+          <p>No hay bloques disponibles.</p>
         )}
-        <button type="submit" className={styles.submitButton}>
-          Añadir
+
+        <label>Imagen del Bloque de Defecto:</label>
+        <input type="text" value={formData.defectBlockImageUrl} disabled />
+
+        <label>Código de Síntoma:</label>
+        <input type="text" value={formData.symptomCode} disabled />
+
+        <label>Código de Sub-Síntoma:</label>
+        <input type="text" value={formData.subSymptomCode} disabled />
+
+        <label>Código de Reparación:</label>
+        <input type="text" value={formData.repairCode} disabled />
+
+        <label>Código de Sub-Reparación:</label>
+        <input type="text" value={formData.subRepairCode} disabled />
+      <button type="submit" >
+          Añadir bloque
         </button>
       </form>
     </div>
   );
 };
 
-export default AddBlockCodeClosing;
+export default EditModel;
+
+
+

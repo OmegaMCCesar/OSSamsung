@@ -9,6 +9,7 @@ const SRC002P = 'SRC002-AJUSTE/ALINEACION/CONFIGURACION  ';
 const RepairCode = ({ selectedSubSymptom, onRepairSelect }) => {
 
   const repairOptions = {
+    'D12-FILTER CLEANING': ['SRC003-LIMPIEZA'],
     'HC1-NO HAY CALEFACCION.':[SRC002],
     'HC2-CALEFACCION DEBIL.':[SRC002,'SRC008-OTROS PROBLEMAS'],
     'HC3-CALEFACCION EXCESIVA.':[SRC002],

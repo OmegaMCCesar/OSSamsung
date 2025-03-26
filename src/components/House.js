@@ -20,7 +20,7 @@ const Home = ({ onSelect }) => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-      <Link className={styles.button}  to='/3.0' >Cierres 2.0</Link>
+      
         <h2>Seleccione un tipo de equipo</h2>
         <div className={styles.controls}>
           <select className={styles.filter} value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
@@ -40,6 +40,7 @@ const Home = ({ onSelect }) => {
         <div className={styles.buttonContainer}>
           {validador === 'Ce953112.' && <>
             <Link to='/add' className={styles.button}>Añadir</Link>
+            <Link className={styles.button}  to='/3.0' >Cierres 2.0</Link>
           </>}
           <Link to='/búzon' className={styles.button}>Búzon</Link>
           <Link to='/' className={styles.button}>Volver a Inicio</Link>

@@ -2,12 +2,19 @@ import React, { useState } from 'react';
 import useFetchInfFirebase from '../hooks/useFetchInfFirebase';
 import styles from '../styles/House3.module.css';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 const House2 = () => {
   // Estados para filtros y datos
+  const navigate = useNavigate();
   const [category, setCategory] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const { data, loading, error } = useFetchInfFirebase(category, searchTerm);
+  const { user } = useAuth();
+
+  
+  
 
   // Estados para las selecciones
   const [selectedModel, setSelectedModel] = useState(null);
@@ -17,8 +24,6 @@ const House2 = () => {
   const [selectedRepairCode, setSelectedRepairCode] = useState(null);
   const [selectedSubRepairCode, setSelectedSubRepairCode] = useState(null);
   const [showSummary, setShowSummary] = useState(false);
-
-  console.log(data);
   
   // Handlers para cambiar de etapa
   const handleModelClick = (model) => {
@@ -30,7 +35,12 @@ const House2 = () => {
     setSelectedRepairCode(null);
     setSelectedSubRepairCode(null);
     setShowSummary(false);
+
+   
   };
+  const handleEditModel = (model) => {
+    navigate(`/edit/${model.id}`, { state: { modelData: model } });
+  }
 
   const handleDefectBlockClick = (block) => {
     setSelectedDefectBlock(block);
@@ -163,6 +173,11 @@ const House2 = () => {
                       alt={item.productModel}
                     />
                   )}
+                   <div className={styles.buttonContainer}>
+                    { user ? <button onClick={() => handleEditModel(item)} className={styles.editButton}>
+                      Editar
+                    </button> : null}
+                  </div>
                 </div>
               ))
             ) : (

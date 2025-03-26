@@ -1,7 +1,7 @@
 const equips = () => {
 
   const equipmentOptions = [
-    { name: 'LavavajillasBasica', imgURl:'https://cdn.homedepot.com.mx/productos/194837/194837-d.jpg', types: ['lavavajillas'], models: ['DW80CG5420SREM']},
+    /* { name: 'LavavajillasBasica', imgURl:'https://cdn.homedepot.com.mx/productos/194837/194837-d.jpg', types: ['lavavajillas'], models: ['DW80CG5420SREM']}, */
     { name: 'LavadoraWA', imgURl:'https://images.samsung.com/is/image/samsung/mx-top-loader-wa17j6730lv-wa17j6730lv-ax-frontblack-63609451?$624_624_PNG$', types: ['lavadoras'] , models: ['WA3000J',]},
     { name: 'TCombo', imgURl: 'https://cdn.homedepot.com.mx/productos/224225/224225-d.jpg', types: ['lavasecadoras'], models:[' WD26DB8995BZAX'] },
     { name: 'RefrigeradorRT', imgURl:'https://www.megaaudio.com.mx/cdn/shop/products/mx-rt38a571js9-rt38a571js9-em-530642918copy_800x.webp?v=1655848371', types: ['refrigeradores'], models:['RT'] },
