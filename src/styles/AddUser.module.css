@@ -7,6 +7,14 @@
     margin: 5vh auto;
     background-color: #f0f0f0;
   }
+
+  .atras{
+    text-decoration: none;
+    border-radius: 1vh;
+    color: #fff;
+    background-color: #007bff;
+    padding: 1vh;
+  }
   
   h3 {
     text-align: center;

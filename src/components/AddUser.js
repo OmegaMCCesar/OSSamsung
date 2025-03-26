@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from '../styles/AddUser.module.css';
 import { db } from '../configs/firebase';
 import { collection, addDoc } from 'firebase/firestore';
+import { Link } from 'react-router-dom';
 
 const AddUser = () => {
   const [dataForm, setFormData] = useState({
@@ -35,6 +36,7 @@ const AddUser = () => {
 
   return (
     <div className={styles.container}>
+      <Link className={styles.atras} to="/add">atras</Link>
       <h3>Añadir usuario</h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor="userName">Nombre de usuario</label>

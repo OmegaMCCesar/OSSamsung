@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/House.module.css';
 import equips from '../data/equipmentOptions';
+import { useAuth } from '../contexts/AuthContext';
 
 
 const Home = ({ onSelect }) => {
 
+  const { user } = useAuth();
+
   const equipmentOption = equips();
   const [selectedType, setSelectedType] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
-  const [validador, setValidador] = useState('');
   const filteredOptions = equipmentOption.filter((equipment) => {
     const matchesType = selectedType ? equipment.types.includes(selectedType) : true;
     const matchesName = equipment.name.toLowerCase().includes(searchTerm.toLowerCase());
@@ -35,13 +37,12 @@ const Home = ({ onSelect }) => {
             <option value="lavavajillas">Lavavajillas</option>
           </select>
           <input type="text" placeholder="Buscar modelo válido" className={styles.search} value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
-          <input type="password" placeholder="ADM" className={styles.search} value={validador} onChange={(e) => setValidador(e.target.value)} />
         </div>
         <div className={styles.buttonContainer}>
-          {validador === 'Ce953112.' && <>
+          {user ? <>
             <Link to='/add' className={styles.button}>Añadir</Link>
             <Link className={styles.button}  to='/3.0' >Cierres 2.0</Link>
-          </>}
+          </>: null}
           <Link to='/búzon' className={styles.button}>Búzon</Link>
           <Link to='/' className={styles.button}>Volver a Inicio</Link>
         </div>
