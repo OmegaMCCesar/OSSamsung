@@ -312,63 +312,6 @@ const EditModel = () => {
       [index]: !prev[index],
     }));
   };
- 
-  
-  // Sección que muestra los defect blocks existentes en el modelo
-  const renderExistingBlocks = () => {
-    if (!modelData.defectBlocks || modelData.defectBlocks.length === 0) {
-      return <p>No hay defect blocks en este modelo.</p>;
-    }
-    return (
-        <ul className={`${styles.ulResume}`}>
-          {modelData.defectBlocks.map((block, idx) => (
-            <li className={styles.card} key={idx}>
-              <button className={styles.toggleButton} onClick={() => toggleBlock(idx)}>
-                {expand[idx] ? "🔽 Ocultar" : "▶️ Mostrar"} {block.defectBlock}
-              </button>
-              
-              {expand[idx] && (
-                <div className={styles.cardContent}>
-                  <strong>Bloque:</strong> {block.defectBlock}
-                  <ul>
-                    {block.symptoms &&
-                      block.symptoms.map((symptom, sIdx) => (
-                        <li key={sIdx}>
-                          <strong>Síntoma:</strong> {symptom.symptomCode}
-                          <ul>
-                            {symptom.subSymptoms &&
-                              symptom.subSymptoms.map((subSym, subIdx) => (
-                                <li key={subIdx}>
-                                  <strong>Sub-Síntoma:</strong> {subSym.subSymptomCode}
-                                  <ul>
-                                    {subSym.repairCodes &&
-                                      subSym.repairCodes.map((repair, rIdx) => (
-                                        <li key={rIdx}>
-                                          <strong>Reparación:</strong> {repair.repairCode}
-                                          <ul>
-                                            {repair.subRepairCodes &&
-                                              repair.subRepairCodes.map((subRepair, srIdx) => (
-                                                <li key={srIdx}>
-                                                  <strong>Sub-Reparación:</strong> {subRepair}
-                                                </li>
-                                              ))}
-                                          </ul>
-                                        </li>
-                                      ))}
-                                  </ul>
-                                </li>
-                              ))}
-                          </ul>
-                        </li>
-                      ))}
-                  </ul>
-                </div>
-              )}
-            </li>
-          ))}
-        </ul>
-      );
-  };
 
   // Función para comprobar si la combinación ya existe en el modelo
   const checkIfDuplicate = () => {
@@ -389,6 +332,67 @@ const EditModel = () => {
   };
 
   const duplicateExists = checkIfDuplicate();
+
+  // Sección que muestra los defect blocks existentes en el modelo
+  const renderExistingBlocks = () => {
+    if (!modelData.defectBlocks || modelData.defectBlocks.length === 0) {
+      return <p>No hay defect blocks en este modelo.</p>;
+    }
+    return (
+      <ul className={`${styles.ulResume}`}>
+        {modelData.defectBlocks.map((block, idx) => (
+          <li
+            className={styles.card}
+            key={idx}
+            // Si se va a añadir un bloque ya existente, se pinta en rojo
+            style={duplicateExists && block.defectBlock === formData.defectBlock ? { color: 'red' } : {}}
+          >
+            <button className={styles.toggleButton} onClick={() => toggleBlock(idx)}>
+              {expand[idx] ? "🔽 Ocultar" : "▶️ Mostrar"} {block.defectBlock}
+            </button>
+
+            {expand[idx] && (
+              <div className={styles.cardContent}>
+                <strong>Bloque:</strong> {block.defectBlock}
+                <ul>
+                  {block.symptoms &&
+                    block.symptoms.map((symptom, sIdx) => (
+                      <li key={sIdx}>
+                        <strong>Síntoma:</strong> {symptom.symptomCode}
+                        <ul>
+                          {symptom.subSymptoms &&
+                            symptom.subSymptoms.map((subSym, subIdx) => (
+                              <li key={subIdx}>
+                                <strong>Sub-Síntoma:</strong> {subSym.subSymptomCode}
+                                <ul>
+                                  {subSym.repairCodes &&
+                                    subSym.repairCodes.map((repair, rIdx) => (
+                                      <li key={rIdx}>
+                                        <strong>Reparación:</strong> {repair.repairCode}
+                                        <ul>
+                                          {repair.subRepairCodes &&
+                                            repair.subRepairCodes.map((subRepair, srIdx) => (
+                                              <li key={srIdx}>
+                                                <strong>Sub-Reparación:</strong> {subRepair}
+                                              </li>
+                                            ))}
+                                        </ul>
+                                      </li>
+                                    ))}
+                                </ul>
+                              </li>
+                            ))}
+                        </ul>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    );
+  };
 
   // Actualización de opciones según selección
   useEffect(() => {
@@ -627,16 +631,6 @@ const EditModel = () => {
         <h3>Defect Blocks existentes en este modelo:</h3>
         {renderExistingBlocks()}
       </div>
-
-      {/* Mensaje de duplicado */}
-      {duplicateExists && (
-        <div className={styles.duplicateAlert}>
-          <p>
-            La combinación de <strong>Bloque de Defecto</strong>, <strong>Código de Síntoma</strong>, <strong>Sub-Síntoma</strong>, <strong>Código de Reparación</strong> y <strong>Sub-Reparación</strong> ya existe en este modelo.
-          </p>
-        </div>
-      )}
-
       <form className={styles.form} onSubmit={handleSubmit}>
         <label>Categoría:</label>
         <input type="text" value={formData.category} disabled />
@@ -733,6 +727,14 @@ const EditModel = () => {
         ) : (
           <p>No hay sub-códigos de reparación disponibles.</p>
         )}
+         {/* Mensaje de duplicado */}
+      {duplicateExists && (
+        <div className={styles.duplicateAlert}>
+          <p>
+            La combinación de <strong>Bloque de Defecto</strong>, <strong>Código de Síntoma</strong>, <strong>Sub-Síntoma</strong>, <strong>Código de Reparación</strong> y <strong>Sub-Reparación</strong> ya existe en este modelo.
+          </p>
+        </div>
+      )}
 
         <button type="submit">Añadir bloque</button>
       </form>
@@ -741,3 +743,5 @@ const EditModel = () => {
 };
 
 export default EditModel;
+
+
