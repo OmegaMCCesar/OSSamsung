@@ -69,7 +69,7 @@ const EditModel = () => {
       <ul className={`${styles.ulResume}`}>
         {modelData.defectBlocks.map((block, idx) => (
           <li
-            className={styles.card}
+            className={ styles.card }
             key={idx}
             // Si se va a añadir un bloque ya existente, se pinta en rojo
             style={duplicateExists && block.defectBlock === formData.defectBlock ? { color: 'red' } : {}}
@@ -79,7 +79,7 @@ const EditModel = () => {
             </button>
 
             {expand[idx] && (
-              <div className={styles.cardContent}>
+              <div onClick={() => toggleBlock(idx)} className={styles.cardContent}>
                 <strong>Bloque:</strong> {block.defectBlock}
                 <ul>
                   {block.symptoms &&
