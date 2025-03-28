@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../configs/firebase';
 import styles from '../styles/Login.module.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login({ onLogin }) {
   const [email, setEmail] = useState('');
@@ -27,6 +27,7 @@ function Login({ onLogin }) {
 
   return (
     <div className={styles.loginContainer}>
+      <Link to='/' className={styles.logo}>Volver</Link>
       <h2 className={styles.title} >Iniciar Sesión</h2>
       {error && <p className={styles.error}>{error}</p>}
       <input

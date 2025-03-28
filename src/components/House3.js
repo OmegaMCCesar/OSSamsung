@@ -163,7 +163,6 @@ const House2 = () => {
                   className={styles.item}
                   onClick={() => handleModelClick(item)}
                 >
-                  <p><strong>ID:</strong> {item.id}</p>
                   <p><strong>Nombre:</strong> {item.productName}</p>
                   <p><strong>Modelo:</strong> {item.productModel}</p>
                   {item.imagenes?.modelo && (

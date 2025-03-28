@@ -41,8 +41,8 @@ const Home = ({ onSelect }) => {
         <div className={styles.buttonContainer}>
           {user ? <>
             <Link to='/add' className={styles.button}>Añadir</Link>
-            <Link className={styles.button}  to='/3.0' >Cierres 2.0</Link>
           </>: null}
+          <Link className={styles.button}  to='/3.0' >Cierres 2.0</Link>
           <Link to='/búzon' className={styles.button}>Búzon</Link>
           <Link to='/' className={styles.button}>Volver a Inicio</Link>
         </div>
