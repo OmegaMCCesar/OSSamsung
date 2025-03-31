@@ -1,7 +1,7 @@
 /* EditModel.module.css */
 
 .container {
-    max-width: 800px;
+    max-width: 80%;
     margin: 20px auto;
     padding: 20px;
     font-family: 'Arial', sans-serif;
@@ -9,7 +9,29 @@
     border: 1px solid #ddd;
     border-radius: 8px;
   }
+
+  .subContainer{
+    display: flex;
+    flex-direction: row;    
+  }
   
+.imagesContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+
+.imageManual{
+  width: 60%;
+  height: 50%;
+  margin: 1vh auto;
+}
+
   h2 {
     color: #333;
     margin-bottom: 10px;
@@ -90,6 +112,7 @@
     color: #fff;
     background-color: #007bff;
     padding: 1vh;
+    margin: 0 1vh;
   }
 
   .ulResume {
@@ -167,6 +190,14 @@
     font-size: 14px;
     text-align: center;
   }
+
+  .manual{
+    border-radius: 1vh;
+    color: #fff;
+    background-color: #007bff;
+    padding: 1vh;
+    width: 20%;
+}
 /* Evita que el contenido ocupe toda la pantalla */
    
   

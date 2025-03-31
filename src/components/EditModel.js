@@ -29,9 +29,7 @@ const EditModel = () => {
   const [repairCodeOptions, setRepairCodeOptions] = useState([]);
   const [subRepairCodeOptions, setSubRepairCodeOptions] = useState([]);
   const [expand, setExpand] = useState({});
-
-  console.log(symptomOptions, subSymptomOptions, repairCodeOptions, subRepairCodeOptions);
-  
+  const [manual, setManual] = useState(false);
 
   const toggleBlock = (index) => {
     setExpand((prev) => ({
@@ -119,18 +117,11 @@ const EditModel = () => {
         ))}
       </ul>
     );
-  };
-
-  useEffect(() => {
-    console.log("Defect Data:", availableBlocks);
-  }, [availableBlocks]);
-
-  // Actualización de opciones según selección
+  };// Actualización de opciones según selección
   useEffect(() => {
     if (formData.defectBlock) {
       const selectedBlock = availableBlocks.find(block => block.defectBlock === formData.defectBlock);
-      console.log("Selected Block:", selectedBlock);
-      
+  
       if (selectedBlock) {
         setSymptomOptions(selectedBlock.symptoms || []);
         setSubSymptomOptions(selectedBlock.subSymptoms || []);
@@ -144,9 +135,7 @@ const EditModel = () => {
     }
   }, [formData.defectBlock, availableBlocks]);
 
-  useEffect(() => {
-    console.log("Symptom Options:", formData.symptomCode);
-    
+  useEffect(() => {    
     if (formData.symptomCode) {
       const selectedSymptom = symptomOptions.find(symptom => symptom.symptomCode === formData.symptomCode);
       if (selectedSymptom) {
@@ -354,11 +343,14 @@ const EditModel = () => {
     }
   };
 
-  return (
+  return !manual ? (
     <div className={styles.container}>
       <Link className={styles.atras} to="/3.0">
         atrás
       </Link>
+      <button className={styles.manual} onClick={() => setManual(!manual)}>
+        {manual ? 'Cerrar edicion Manual' : 'Abrir edicion Manual'}
+      </button>
       <h2>Editar Modelo</h2> 
       <form className={styles.form} onSubmit={handleSubmit}>
         <label>Categoría:</label>
@@ -393,7 +385,7 @@ const EditModel = () => {
                 {block.defectBlock}
               </option>
             ))}
-          </select>
+          </select>            
         ) : (
           <p>No hay bloques disponibles.</p>
         )}
@@ -471,7 +463,52 @@ const EditModel = () => {
         {renderExistingBlocks()}
       </div>
     </div>
-  );
+  ): (
+  <div className={styles.container}>
+    <Link className={styles.atras} to="/3.0">
+    atras
+    </Link>
+    <button className={styles.manual} onClick={() => setManual(!manual)}>
+        {manual ? 'Cerrar edicion Manual' : 'Abrir edicion Manual'}
+      </button>
+      <h2>Añadir bloque de codigo</h2>
+      <div className={styles.subContainer}>
+      <form>
+      <h4>Categoría: {formData.category}</h4>
+      <h4>Modelo: {formData.productModel}</h4>
+      <label>Tipo de Producto:</label>
+        <input
+          type="text"
+          name="productType"
+          value={formData.productType}
+          onChange={handleChange}
+          className={styles.input}
+        />
+      <h4>Nombre del Producto: {formData.productName}</h4>
+      <label>Bloque de defecto:</label>
+      <input type="text" name="defectBlock" value={formData.defectBlock} onChange={handleBlockChange} />
+      <label>Imagen del bloque de defecto:</label>
+      <input type="text" name="defectBlockImageUrl" value={formData.defectBlockImageUrl} onChange={handleChange} />
+      <label>Código de Síntoma:</label>
+      <input type="text" name="symptomCode" value={formData.symptomCode} onChange={handleSymptomChange} />
+      <label>Código de Sub-Síntoma:</label>
+      <input type="text" name="subSymptomCode" value={formData.subSymptomCode} onChange={handleSubSymptomChange} />
+      <label>Código de Reparación:</label>
+      <input type="text" name="repairCode" value={formData.repairCode} onChange={handleRepairCodeChange} />
+      <label>Código de Sub-Reparación:</label>
+      <input type="text" name="subRepairCode" value={formData.subRepairCode} onChange={handleSubRepairCodeChange} />
+      <button type="submit" onClick={handleSubmit}>Añadir bloque</button>
+      </form>
+      <div className={styles.imagesContainer}>
+      <img className={styles.imageManual} src={formData.modelImageUrl} alt="Modelo" />
+      {formData.defectBlockImageUrl.length > 0 && <img className={styles.imageManual} src={formData.defectBlockImageUrl} alt="Bloque de Defecto" />}
+      </div>
+      </div>
+      <div className={styles.existingBlocks}>
+        <h3>Defect Blocks existentes en este modelo:</h3>
+        {renderExistingBlocks()}
+      </div>
+  </div>)
 };
 
 export default EditModel;
