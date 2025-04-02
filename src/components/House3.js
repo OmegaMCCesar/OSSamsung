@@ -189,7 +189,7 @@ const House2 = () => {
             <button onClick={handleReset} className={styles.backButton}>
               Volver a modelos
             </button>
-            <h2>Bloques de defecto para {selectedModel.productModel}</h2>
+            <h2>Bloques de defecto para {selectedModel.productName}</h2>
             <div className={styles.containerBlocks} >
             {selectedModel.defectBlocks && selectedModel.defectBlocks.length > 0 ? (
               selectedModel.defectBlocks.map((block, index) => (
