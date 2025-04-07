@@ -130,7 +130,7 @@ const House2 = () => {
           <div className={styles.summary}>
             <h2>Resumen de Selecciones</h2>
             <p>
-              <strong>Modelo:</strong> {selectedModel?.productModel} - {selectedModel?.productName}
+              <strong>Nombre:</strong> {selectedModel?.productName}
             </p>
             <p>
               <strong>Bloque de defecto:</strong> {selectedDefectBlock?.defectBlock}
