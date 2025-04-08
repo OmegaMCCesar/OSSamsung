@@ -95,12 +95,12 @@ const RepairCode = ({ selectedSubSymptom, onRepairSelect }) => {
       {options ? (
         options.map((repairOption, Index) => (
           <div key={Index} >
+            <button key={repairOption} onClick={() => onRepairSelect(repairOption)} className={styles.option} >{repairOption}</button>
             {repairOption === 'SRC008-OTROS PROBLEMAS' &&
              <div className={styles.ndf}>
               <h4>NDF '(No defecto)'</h4>
               <textarea value={NDF} className={styles.textTareaNDF} readOnly></textarea>
               </div>}
-            <button key={repairOption} onClick={() => onRepairSelect(repairOption)} className={styles.option} >{repairOption}</button>
           </div>
         ))
       ) : (
