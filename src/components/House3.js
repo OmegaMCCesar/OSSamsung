@@ -130,9 +130,6 @@ const House2 = () => {
           <div className={styles.summary}>
             <h2>Resumen de Selecciones</h2>
             <p>
-              <strong>Nombre:</strong> {selectedModel?.productName}
-            </p>
-            <p>
               <strong>Bloque de defecto:</strong> {selectedDefectBlock?.defectBlock}
             </p>
             <p>
@@ -163,7 +160,6 @@ const House2 = () => {
                   className={styles.item}
                   onClick={() => handleModelClick(item)}
                 >
-                  <p><strong>Nombre:</strong> {item.productName}</p>
                   {item.imagenes?.modelo && (
                     <img
                       className={styles.img}

@@ -54,6 +54,8 @@
   }
   
   .item {
+    display: flex;
+    justify-content: center;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     padding: 15px;
@@ -69,10 +71,10 @@
   
   /* Imágenes generales */
   .img {
-    width: 100%;
-    height: auto;
+    width: 80%;
+    height: 80%;
     border-radius: 4px;
-    margin-top: 10px;
+    margin: 10px auto;
   }
   
   /* Ajuste específico para imágenes de bloques de defecto */
