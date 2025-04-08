@@ -18,7 +18,7 @@ const data = () => {
 
     const  SELECTDOOR = {name:'select(DOOR)',imgURl:'https://redhogar.com.mx/assets/uploads/W10511298web.jpg'}; /* Puerta de estufa */
   
-    const FALLA5B01R = {name:'5B01-ASSY-DOOR',imgURl:'https://www.huoltopalvelu.com/WebRoot/FHP/Shops/Huolto/5FD8/71E5/5970/0B03/7FBD/0A28/105F/D64C/DA91-03974K_1_ml.png'};
+    const FALLA5B01R = {name:'5B01-ASSY-DOOR ',imgURl:'https://www.huoltopalvelu.com/WebRoot/FHP/Shops/Huolto/5FD8/71E5/5970/0B03/7FBD/0A28/105F/D64C/DA91-03974K_1_ml.png'};
   
     const FALLA7A04 = {name:'7A04-POWER CORD',imgURl:'https://i.ebayimg.com/images/g/oNsAAOSwzJJdZuCo/s-l960.webp'}; /*Cable de alimentacion  */
 

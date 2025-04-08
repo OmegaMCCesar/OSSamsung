@@ -12,6 +12,7 @@ const Home = ({ onSelect }) => {
   const equipmentOption = equips();
   const [selectedType, setSelectedType] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
+  const [serialNumber, setSerialNumber] = useState('');
   const filteredOptions = equipmentOption.filter((equipment) => {
     const matchesType = selectedType ? equipment.types.includes(selectedType) : true;
     const matchesName = equipment.name.toLowerCase().includes(searchTerm.toLowerCase());
@@ -19,10 +20,14 @@ const Home = ({ onSelect }) => {
     return matchesType && (matchesName || matchesModels);
   });
 
+  const lengthSerial = serialNumber.length;
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-      
+      {/* <p>Antes de comenzar , introdusca el numero de serie</p>
+      <input type="text" placeholder="Número de serie" className={styles.search} value={serialNumber} onChange={(e) => setSerialNumber(e.target.value)} />
+      <p>{serialNumber}</p> */}
         <h2>Seleccione un tipo de equipo</h2>
         <div className={styles.controls}>
           <select className={styles.filter} value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
@@ -32,7 +37,7 @@ const Home = ({ onSelect }) => {
             <option value="secadoras">Secadoras</option>
             <option value="lavasecadoras">Lavasecadoras</option>
             <option value="estufas">Estufas</option>
-            <option value="microondas">Microondas</option>
+            <option value="hornosMicroondas">Microondas</option>
             <option value="laundry">Laundry</option>
             <option value="lavavajillas">Lavavajillas</option>
           </select>
@@ -48,7 +53,7 @@ const Home = ({ onSelect }) => {
         </div>
       </div>
       
-      <div className={styles.grid}>
+      {/* lengthSerial === 15 && */ <div className={styles.grid}>
         {filteredOptions.map((equipment) => (
           <div key={equipment.name} className={styles.card} onClick={() => onSelect(equipment.name)}>
             <div className={styles.containerCard}>
@@ -56,7 +61,7 @@ const Home = ({ onSelect }) => {
             </div>
           </div>
         ))}
-      </div>
+      </div>}
     </div>
   );
 };
