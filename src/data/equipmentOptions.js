@@ -4,7 +4,7 @@ const equips = () => {
     /* { name: 'LavavajillasBasica', imgURl:'https://cdn.homedepot.com.mx/productos/194837/194837-d.jpg', types: ['lavavajillas'], models: ['DW80CG5420SREM']}, */
     { name: 'LavadoraWA', imgURl:'https://images.samsung.com/is/image/samsung/mx-top-loader-wa17j6730lv-wa17j6730lv-ax-frontblack-63609451?$624_624_PNG$', types: ['lavadoras'] , models: ['WA3000J',]},
     { name: 'TCombo', imgURl: 'https://cdn.homedepot.com.mx/productos/224225/224225-d.jpg', types: ['lavasecadoras'], models:[' WD26DB8995BZAX'] },
-    { name: 'RefrigeradorRT', imgURl:'https://www.megaaudio.com.mx/cdn/shop/products/mx-rt38a571js9-rt38a571js9-em-530642918copy_800x.webp?v=1655848371', types: ['refrigeradores'], models:['RT'] },
+    { name: 'RefrigeradorRT', imgURl:'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcScpnCL7rWxibHHi_ZzlgW4egjt9M_1kJVTYp0XKbEuS96GaD8rB8fFqNw5B2dgPWHHu3s5o7psQXo408OsY-OWHWm0X88X8vAMRcaI9C7iCpx9R77PLGo24ygANGSEWXD9UZs2iw&usqp=CAc', types: ['refrigeradores'], models:['RT'] },
     { name: 'RefrigeradorRR', imgURl:'https://cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/202408/29/00104721227611____19__1200x1200.jpg', types: ['refrigeradores'] , models: ['RR'] },
     { name: 'RefrigeradorD', imgURl: 'https://i5-mx.walmartimages.com/mg/gm/1p/images/product-images/img_large/00880609014719l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF', types: ['refrigeradores'], models: ['SR20'] },
     { name: 'Bespoke', imgURl: 'https://i5-mx.walmartimages.com/mg/gm/1p/images/product-images/img_large/00750940183015l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF', types: ['refrigeradores'], models: ['RF'] },
