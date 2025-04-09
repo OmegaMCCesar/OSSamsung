@@ -10,7 +10,6 @@ const SubSymptom = ({ selectedSymptom, onSubSymptomSelect }) => {
 
 const HL1 = ' HL1-ENCIENDE, PERO NO OPERA ';
 const HL2 = 'HL2-OPERACION INTERMITENTE ';
-const D10 = 'D10-'
 const C94 = 'C94-DOOR ALIGMENT';
 const C94P = 'C94P-DOOR ALIGMENT ';
 

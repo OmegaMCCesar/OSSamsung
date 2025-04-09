@@ -25,6 +25,19 @@
   text-align: center;
 }
 
+h2{
+  margin: 1vh 2vh;
+}
+
+.cabezalh2{
+  color: #ccc;
+}
+.cabezalTitle{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 /* Controles (filtros, búsqueda) */
 .controls {
   display: flex;

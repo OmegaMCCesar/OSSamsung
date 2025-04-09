@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, /* useEffect */ } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/House.module.css';
 import equips from '../data/equipmentOptions';
 import { useAuth } from '../contexts/AuthContext';
+/* import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { db } from '../configs/firebase' */
+
+
 
 
 const Home = ({ onSelect }) => {
@@ -12,7 +16,8 @@ const Home = ({ onSelect }) => {
   const equipmentOption = equips();
   const [selectedType, setSelectedType] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
-  const [serialNumber, setSerialNumber] = useState('');
+/*   const [serialNumber, setSerialNumber] = useState('');
+  const [serialExists, setSerialExists] = useState(null); */
   const filteredOptions = equipmentOption.filter((equipment) => {
     const matchesType = selectedType ? equipment.types.includes(selectedType) : true;
     const matchesName = equipment.name.toLowerCase().includes(searchTerm.toLowerCase());
@@ -20,15 +25,52 @@ const Home = ({ onSelect }) => {
     return matchesType && (matchesName || matchesModels);
   });
 
-  const lengthSerial = serialNumber.length;
+/*   const handleSerialNumberCheck = async (serialNumber) => {
+    if (!serialNumber.trim()) {
+      setSerialExists(null);
+      return;
+    }
+  
+    const docRef = doc(db, 'serialNumbers', serialNumber);
+    const docSnap = await getDoc(docRef);
+  
+    if (docSnap.exists()) {
+      setSerialExists(true);
+    } else {
+      await setDoc(docRef, { createdAt: new Date() });
+      setSerialExists(false);
+    }
+  };
+ */
+/* 
+  useEffect(() => {
+    if (serialNumber.length === 15) {
+      handleSerialNumberCheck(serialNumber);
+    } else {
+      setSerialExists(null);
+    }
+  }, [serialNumber]);
+console.log(serialExists); */
+/* 
+  const lengthSerial = serialNumber.length; */
 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-      {/* <p>Antes de comenzar , introdusca el numero de serie</p>
-      <input type="text" placeholder="Número de serie" className={styles.search} value={serialNumber} onChange={(e) => setSerialNumber(e.target.value)} />
+     {/*  <p>Antes de comenzar , introdusca el numero de serie</p>
+      <input type="text" placeholder="Número de serie" className={styles.search} value={serialNumber} onChange={(e) => setSerialNumber(e.target.value.toUpperCase())} />
+      {serialExists === true && (
+          <p className={styles.success}>✅ Número de serie ya registrado. Puede continuar con el cierre.</p>
+        )}
+        {serialExists === false && (
+          <p className={styles.info}>🔄 Número de serie registrado por primera vez. Puede continuar.</p>
+        )}
       <p>{serialNumber}</p> */}
+      <div className={styles.cabezalTitle}>
+        <h2 className={styles.cabezalh2} >INGENERIA LINEA BLANCA</h2>
         <h2>Seleccione un tipo de equipo</h2>
+        <h2  className={styles.cabezalh2}>TECHNICAL SUPPORT SEM-S</h2>
+        </div>
         <div className={styles.controls}>
           <select className={styles.filter} value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
             <option value="">Todos</option>
@@ -53,7 +95,7 @@ const Home = ({ onSelect }) => {
         </div>
       </div>
       
-      {/* lengthSerial === 15 && */ <div className={styles.grid}>
+      {/* lengthSerial === 15 &&  */<div className={styles.grid}>
         {filteredOptions.map((equipment) => (
           <div key={equipment.name} className={styles.card} onClick={() => onSelect(equipment.name)}>
             <div className={styles.containerCard}>
