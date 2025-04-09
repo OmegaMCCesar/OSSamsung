@@ -1,7 +1,50 @@
-import React from 'react';
+import React, { /* useEffect  */} from 'react';
 import styles from '../styles/FinalSummary.module.css';
+/* import { useSerialNumber } from '../contexts/SerialNumberContext';
+import { getDoc, doc, updateDoc, arrayUnion } from 'firebase/firestore';
+import { db } from '../configs/firebase'; */
 
 const FinalSummary = ({ selections }) => {
+  /* const { serialNumber } = useSerialNumber(); */
+
+  // Función para comparar dos objetos de selección
+  /* const areSelectionsEqual = (selection1, selection2) => {
+    return (
+      selection1.equipment === selection2.equipment &&
+      selection1.block === selection2.block &&
+      selection1.symptomBlock === selection2.symptomBlock &&
+      selection1.subSymptom === selection2.subSymptom &&
+      selection1.repairCode === selection2.repairCode &&
+      selection1.finalRepair === selection2.finalRepair
+    );
+  }; */
+
+  /* useEffect(() => {
+    const saveSummary = async () => {
+      if (serialNumber) {
+        const docRef = doc(db, 'serialNumbers', serialNumber);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          const existingSummaries = docSnap.data().summaries || [];
+          const isDuplicate = existingSummaries.some((summary) =>
+            areSelectionsEqual(summary, selections)
+          );
+
+          if (!isDuplicate) {
+            await updateDoc(docRef, {
+              summaries: arrayUnion(selections),
+            });
+          } else {
+            alert('Este cierre ya ha sido registrado anteriormente.');
+          }
+        }
+      }
+    };
+
+    saveSummary();
+  }, [serialNumber, selections]); */
+
   const {
     equipment,
     block,
@@ -49,12 +92,12 @@ const FinalSummary = ({ selections }) => {
     <div className={styles.container}>
       <h2>Resumen Final de Cierre</h2>
       <ul className={styles.summaryList}>
-        <li key="equipment"><strong>Equipo seleccionado:</strong> {equipment}</li>
-        <li key="block"><strong>Bloque de defecto:</strong> {block}</li>
-        <li key="symptomBlock"><strong>Código de síntoma:</strong> {symptomBlock}</li>
-        {subSymptom && <li key="subSymptom">{subSymptom}</li>}
-        <li key="repairCode"><strong>Código de reparación:</strong> {repairCode}</li>
-        {finalRepair && <li key="finalRepair">{finalRepair}</li>}
+        <li><strong>Equipo seleccionado:</strong> {equipment}</li>
+        <li><strong>Bloque de defecto:</strong> {block}</li>
+        <li><strong>Código de síntoma:</strong> {symptomBlock}</li>
+        {subSymptom && <li><strong>Sub-síntoma:</strong> {subSymptom}</li>}
+        <li><strong>Código de reparación:</strong> {repairCode}</li>
+        {finalRepair && <li><strong>Reparación final:</strong> {finalRepair}</li>}
       </ul>
       <hr />
       {renderAdditionalInfo()}
@@ -63,3 +106,4 @@ const FinalSummary = ({ selections }) => {
 };
 
 export default FinalSummary;
+

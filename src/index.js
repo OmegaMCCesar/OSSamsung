@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { AuthProvider } from './contexts/AuthContext';
+import { SerialNumberProvider } from './contexts/SerialNumberContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <SerialNumberProvider>
     <AuthProvider>
       <App />
     </AuthProvider>
+    </SerialNumberProvider>
   </React.StrictMode>
 );
 

@@ -5,6 +5,9 @@ import equips from '../data/equipmentOptions';
 import { useAuth } from '../contexts/AuthContext';
 /* import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { db } from '../configs/firebase' */
+/* import { useSerialNumber } from '../contexts/SerialNumberContext'; // Importar el contexto de SerialNumber */
+/* import { validarGarantia } from '../utils/validarGarantia'; */
+
 
 
 
@@ -12,12 +15,15 @@ import { db } from '../configs/firebase' */
 const Home = ({ onSelect }) => {
 
   const { user } = useAuth();
+/*   const { serialNumber, setSerialNumber } = useSerialNumber(); */
 
   const equipmentOption = equips();
   const [selectedType, setSelectedType] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
-/*   const [serialNumber, setSerialNumber] = useState('');
-  const [serialExists, setSerialExists] = useState(null); */
+/*   const [serialExists, setSerialExists] = useState(null);
+  const [garantiaMensaje, setGarantiaMensaje] = useState('');
+ */
+
   const filteredOptions = equipmentOption.filter((equipment) => {
     const matchesType = selectedType ? equipment.types.includes(selectedType) : true;
     const matchesName = equipment.name.toLowerCase().includes(searchTerm.toLowerCase());
@@ -25,9 +31,10 @@ const Home = ({ onSelect }) => {
     return matchesType && (matchesName || matchesModels);
   });
 
-/*   const handleSerialNumberCheck = async (serialNumber) => {
+  /* const handleSerialNumberCheck = async (serialNumber) => {
     if (!serialNumber.trim()) {
       setSerialExists(null);
+      setGarantiaMensaje('');
       return;
     }
   
@@ -40,24 +47,28 @@ const Home = ({ onSelect }) => {
       await setDoc(docRef, { createdAt: new Date() });
       setSerialExists(false);
     }
-  };
- */
-/* 
-  useEffect(() => {
+
+    const { mensaje } = validarGarantia(serialNumber);
+    setGarantiaMensaje(mensaje);
+  }; */
+
+
+ /*  useEffect(() => {
     if (serialNumber.length === 15) {
       handleSerialNumberCheck(serialNumber);
     } else {
       setSerialExists(null);
+      setGarantiaMensaje('');
     }
-  }, [serialNumber]);
-console.log(serialExists); */
-/* 
-  const lengthSerial = serialNumber.length; */
+  }, [serialNumber]); 
+
+  const lengthSerial = serialNumber.length;
+console.log(serialNumber); */
 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-     {/*  <p>Antes de comenzar , introdusca el numero de serie</p>
+      {/* <p>Antes de comenzar , introduzca el numero de serie</p>
       <input type="text" placeholder="Número de serie" className={styles.search} value={serialNumber} onChange={(e) => setSerialNumber(e.target.value.toUpperCase())} />
       {serialExists === true && (
           <p className={styles.success}>✅ Número de serie ya registrado. Puede continuar con el cierre.</p>
@@ -65,9 +76,14 @@ console.log(serialExists); */
         {serialExists === false && (
           <p className={styles.info}>🔄 Número de serie registrado por primera vez. Puede continuar.</p>
         )}
-      <p>{serialNumber}</p> */}
+      <p>{serialNumber}</p>
+      {garantiaMensaje && (
+          <p className={garantiaMensaje.includes('fuera') ? styles.error : styles.success}>
+            {garantiaMensaje}
+          </p>
+        )} */}
       <div className={styles.cabezalTitle}>
-        <h2 className={styles.cabezalh2} >INGENERIA LINEA BLANCA</h2>
+        <h2 className={styles.cabezalh2} >INGENIERIA LINEA BLANCA</h2>
         <h2>Seleccione un tipo de equipo</h2>
         <h2  className={styles.cabezalh2}>TECHNICAL SUPPORT SEM-S</h2>
         </div>
@@ -95,7 +111,7 @@ console.log(serialExists); */
         </div>
       </div>
       
-      {/* lengthSerial === 15 &&  */<div className={styles.grid}>
+      {/* lengthSerial === 15 && */ <div className={styles.grid}>
         {filteredOptions.map((equipment) => (
           <div key={equipment.name} className={styles.card} onClick={() => onSelect(equipment.name)}>
             <div className={styles.containerCard}>

@@ -29,6 +29,17 @@ h2{
   margin: 1vh 2vh;
 }
 
+.error{
+  color: #ff0000;
+  font-weight: bold;
+  margin: 1vh 2vh;
+} 
+.success{
+  color: #00ff00;
+  font-weight: bold;
+  margin: 1vh 2vh;
+}
+
 .cabezalh2{
   color: #ccc;
 }
