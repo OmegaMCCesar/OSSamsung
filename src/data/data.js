@@ -3,7 +3,7 @@ const data = () => {
     const FALLADR20 = {name:'DR20-FREEZER DOOR GLASS(TRIM KIT)',imgURl:'https://i.ebayimg.com/images/g/KRkAAOSw8wJmtD0X/s-l1600.webp'};/* Puerta de CONGELADOR */
 
     const FALLADR21 = {name:'DR21-REFRIGERATOR DOOR GLASS(TRIM KIT)',imgURl:'https://i.ebayimg.com/images/g/WvkAAOSwiNNjt5ms/s-l1600.webp'}; /* Puerta de refrigerador */
-  
+
     const FALLA4F14 = {name:'4F14-HINGE COVER',imgURl:'https://m.media-amazon.com/images/I/614dkHHHjBL._AC_SX679_.jpg'}; /* Bisagras Refrigerador */;
     const FALLA4F14W = {name:'4F14-HINGE COVER',imgURl:'https://www.todorepuestoselectro.com/image/cache/data/OKJMLM/CHCHU/HISENSE2/CHUCHI/TORMENTA/LOL/OYRI/MIELE/CARPETA/GOMA/BISAGRA-LAVADORA-SAMSUNG3-1000x1000.jpg'}; /* Bisagras LAVADORAS */;
     const FALLA5B03 = {name:'DR17-REFRIGERATOR GASKET',imgURl:'https://http2.mlstatic.com/D_NQ_NP_2X_606930-MLM44369685056_122020-F.jpg'}; /* Codigos de cierre para gasket */

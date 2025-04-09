@@ -58,6 +58,10 @@ const ContactForm = () => {
           <label className={styles.label}>Correo Electrónico</label>
           <input type="email" name="user_email" className={styles.input} required />
         </div>
+        <div className={styles.formField} >
+          <label className={styles.label}>Teléfono o Cel</label>
+          <input type="tel" name="user_phone" className={styles.input} required />
+        </div>
         <div className={styles.formField}>
           <label className={styles.label}>Agrega el producto o duda para código de cierre no encontrado</label>
           <textarea name="message" className={styles.textarea} required />
