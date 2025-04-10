@@ -5,6 +5,7 @@ import styles from '../styles/FinalRepairOptions.module.css';
 
 const FinalRepairOptions = ({ selectedRepairCode, onFinalSelect }) => {
   const finalOptions = {
+    '   SRC000-CAMBIO DE PIEZA ':['A17-REEMPLAZO DE SENSOR'],
     'SRC003-LIMPIEZA': ['M10-LIMPIEZA'],
     'SRC002-AJUSTE/ALINEACION/CONFIGURACION  ':['M09-AJUSTE '],
     'SRC002-AJUSTE/ALINEACION/CONFIGURACION.':['M09-AJUSTE.'],

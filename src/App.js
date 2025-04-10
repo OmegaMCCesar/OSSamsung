@@ -20,7 +20,7 @@ function App() {
     // Lógica después del inicio de sesión exitoso
     console.log('Usuario autenticado:', user);
   };
-
+/* const emergi = true */
   return (
     <Router>
     <Routes>
