@@ -54,7 +54,7 @@ const FinalSummary = ({ selections }) => {
     finalRepair,
   } = selections;
 
-  const renderAdditionalInfo = () => {
+ /*  const renderAdditionalInfo = () => {
     switch (finalRepair) {
       case 'M09-AJUSTE':
         return (
@@ -86,7 +86,7 @@ const FinalSummary = ({ selections }) => {
       default:
         return null;
     }
-  };
+  }; */
 
   return (
     <div className={styles.container}>
@@ -100,7 +100,7 @@ const FinalSummary = ({ selections }) => {
         {finalRepair && <li><strong>Reparación final:</strong> {finalRepair}</li>}
       </ul>
       <hr />
-      {renderAdditionalInfo()}
+      {/* {renderAdditionalInfo()} */}
     </div>
   );
 };
