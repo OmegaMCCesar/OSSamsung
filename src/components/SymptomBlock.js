@@ -21,6 +21,7 @@ const SRC002 = 'SRC002-AJUSTE/ALINEACION/CONFIGURACION';
 
 const SymptomBlock = ({ selectedBlock, onSymptomSelect }) => {
   const symptomBlocks = {
+    'BR13-WATER VALVE(ICE/WATER)  ':[{simtom:'SRC029-PROBLEMA DE AGUA', description:'Problemas de flujo de agua en el dispensador de agua o hielo, si la valvula no funciona correctamente, el agua no llegara a los dispensadores'}],
     'CR69-EVAPORATOR HEATER':[{simtom:'  SRC021-CALENTAMIENTO/REFRIGERACION   ', description:'La resistencia dañada provocara que el evaporador no se descongele, por lo que el equipo no enfriara correctamente'}],
     '4C07-TEMPERATURE SENSOR(ELECTRONIC)':[{simtom:'  SRC021-CALENTAMIENTO/REFRIGERACION  ',description:'Si el sensor de temperatura no funciona correctamente, el equipo no podra realizar su deshielo de manera correcta'}],
     'select(DOOR)':[{simtom:'SRC013-PROBLEMAS DE OPERACION(DOOR)', description:'Si la puerta no cierra de manera correctamente o esta dañada , usaremos los siguientes codigos de cierre'}],
