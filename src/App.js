@@ -25,7 +25,7 @@ function App() {
     <Router>
     <Routes>
       <Route path="/" element={<Homepage />} />
-      <Route path="/Bridge" element={<Bridge />} />
+      <Route path="/Bridge" element={<House3 />} />
       <Route path='/búzon' element={       
         <ContactForm />
         } />

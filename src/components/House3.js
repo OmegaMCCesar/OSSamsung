@@ -12,8 +12,6 @@ const House2 = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const { data, loading, error } = useFetchInfFirebase(category, searchTerm);
   const { user } = useAuth();
-
-  
   
 
   // Estados para las selecciones
@@ -91,8 +89,16 @@ const House2 = () => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.cabezal}>
+      <div className={styles.cabezalTitle}>
+        <h2 className={styles.cabezalh2} >INGENIERIA LINEA BLANCA</h2>
+        <h2  className={styles.cabezalh2}>TECHNICAL SUPPORT SEM-S</h2>
+        </div>
+        {user && user.email === 'luiscesar.munoz.cervantes.upiit@gmail.com' ? <>
+            <Link to='/add' className={styles.button}>Añadir</Link>
+          </>: null}
       <div className={styles.filters}>
-        <Link className={styles.volver} to="/Bridge">volver</Link>
+        <Link className={styles.volver} to="/">volver</Link>
         <input
           type="text"
           className={styles.searchInput}
@@ -120,7 +126,7 @@ const House2 = () => {
       </div>
       <p className={styles.anuncio}>Los modelos aún se están agregando. En esta sección podrá buscar por el modelo, categoría y tipo. Si aún no aparece el modelo que necesita, envíe su modelo y cuál es su duda al buzon de abajo.</p>
       <Link to='/búzon' className={styles.volver}>Búzon</Link>
-
+       </div>
       <div className={styles.results}>
         {loading && <div>Cargando...</div>}
         {error && <div>Error: {error.message}</div>}
