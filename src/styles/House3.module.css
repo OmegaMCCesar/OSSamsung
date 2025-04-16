@@ -72,6 +72,10 @@
   .summary, .results, .modelList, .defectBlockList, .symptomCodeList, .subSymptomCodeList, .repairCodeList, .subRepairCodeList {
     padding: 14px;
   }
+
+  .h2bloks{
+    color: hsl(215, 100%, 97%);
+  }
   
   .results {
     margin-top: 20px;
@@ -218,6 +222,11 @@
   
   .summary h2 {
     margin-bottom: 15px;
+    color: hsl(211, 100%, 69%);
+  }
+
+  .h2{
+    color: hsl(215, 100%, 97%);
   }
   
   .summary p {

@@ -191,7 +191,7 @@ const House2 = () => {
             <button onClick={handleReset} className={styles.backButton}>
               Volver a modelos
             </button>
-            <h2>Bloques de defecto para {selectedModel.productName}</h2>
+            <h2 className={styles.h2bloks} >Bloques de defecto para {selectedModel.productName}</h2>
             <div className={styles.containerBlocks} >
             {selectedModel.defectBlocks && selectedModel.defectBlocks.length > 0 ? (
               selectedModel.defectBlocks.map((block, index) => (
@@ -222,7 +222,7 @@ const House2 = () => {
             <button onClick={() => setSelectedDefectBlock(null)} className={styles.backButton}>
               Volver a bloques de defecto
             </button>
-            <h2>Síntomas para {selectedDefectBlock.defectBlock}</h2>
+            <h2 className={styles.h2bloks} >Síntomas para {selectedDefectBlock.defectBlock}</h2>
             {selectedDefectBlock.symptoms && selectedDefectBlock.symptoms.length > 0 ? (
               <ul>
                 {selectedDefectBlock.symptoms.map((symptom, symIndex) => (
@@ -246,7 +246,7 @@ const House2 = () => {
             <button onClick={() => setSelectedSymptom(null)} className={styles.backButton}>
               Volver a síntomas
             </button>
-            <h2>Sub-Síntomas para {selectedSymptom.symptomCode}</h2>
+            <h2 className={styles.h2bloks} >Sub-Síntomas para {selectedSymptom.symptomCode}</h2>
             {selectedSymptom.subSymptoms && selectedSymptom.subSymptoms.length > 0 ? (
               <ul>
                 {selectedSymptom.subSymptoms.map((sub, subIndex) => (
@@ -270,7 +270,7 @@ const House2 = () => {
             <button onClick={() => setSelectedSubSymptom(null)} className={styles.backButton}>
               Volver a sub-síntomas
             </button>
-            <h2>Códigos de reparación para {selectedSubSymptom.subSymptomCode}</h2>
+            <h2 className={styles.h2bloks} >Códigos de reparación para {selectedSubSymptom.subSymptomCode}</h2>
             {selectedSubSymptom.repairCodes && selectedSubSymptom.repairCodes.length > 0 ? (
               <ul>
                 {selectedSubSymptom.repairCodes.map((repair, repIndex) => (
@@ -294,7 +294,7 @@ const House2 = () => {
             <button onClick={() => setSelectedRepairCode(null)} className={styles.backButton}>
               Volver a códigos de reparación
             </button>
-            <h2>Sub-Códigos de reparación para {selectedRepairCode.repairCode}</h2>
+            <h2 className={styles.h2bloks} >Sub-Códigos de reparación para {selectedRepairCode.repairCode}</h2>
             {selectedRepairCode.subRepairCodes && selectedRepairCode.subRepairCodes.length > 0 ? (
               <ul>
                 {selectedRepairCode.subRepairCodes.map((subRep, subRepIndex) => (
