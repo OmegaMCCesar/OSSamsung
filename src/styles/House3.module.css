@@ -2,6 +2,7 @@
 
 .container {
   padding-top: 12px; /* espacio para el header sticky */
+  background-color: black;
 }
 
 .cabezal {
@@ -9,7 +10,7 @@
   top: 0;
   margin: 0 auto;
   width: 96%;
-  background: rgba(255, 255, 255, 0.9);
+  background: #000000e6;
   backdrop-filter: blur(8px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -31,7 +32,7 @@
   font-size: 20px;
   font-weight: 600;
   margin: 0;
-  color: #1e293b;
+  color: hwb(217 85% 0%);
 }
 
 .filters {
@@ -69,7 +70,7 @@
   }
 
   .summary, .results, .modelList, .defectBlockList, .symptomCodeList, .subSymptomCodeList, .repairCodeList, .subRepairCodeList {
-    padding: 24px;
+    padding: 14px;
   }
   
   .results {
@@ -129,7 +130,7 @@
   
   .block {
     width: 10%;
-    background-color: #fff;
+    background-color: hwb(0 98% 0%);
     border: 1px solid #eee;
     padding: 10px;
     cursor: pointer;
@@ -143,7 +144,7 @@
   }
   .anuncio {
     font-size: 14px;
-    color: #475569;
+    color: hsl(215, 100%, 97%);
     margin: 0;
   }
   
