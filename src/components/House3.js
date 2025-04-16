@@ -192,6 +192,7 @@ const House2 = () => {
               Volver a modelos
             </button>
             <h2 className={styles.h2bloks} >Bloques de defecto para {selectedModel.productName}</h2>
+            <p className={styles.h2bloks}>Seleccione la parte reemplazada por el técnico. Si se sustituyeron varias, elija la de mayor importancia.</p>
             <div className={styles.containerBlocks} >
             {selectedModel.defectBlocks && selectedModel.defectBlocks.length > 0 ? (
               selectedModel.defectBlocks.map((block, index) => (
