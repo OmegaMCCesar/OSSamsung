@@ -38,7 +38,7 @@
 .filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 6px;
   align-items: center;
 }
 
@@ -48,6 +48,7 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   flex: 1;
+  margin: 0 8px 0 0;
 }
 .categorySelect {
   padding: 8px 12px;
@@ -70,7 +71,7 @@
   }
 
   .summary, .results, .modelList, .defectBlockList, .symptomCodeList, .subSymptomCodeList, .repairCodeList, .subRepairCodeList {
-    padding: 5px 16px;
+    padding: 8px 8px;
   }
 
   .h2bloks{
@@ -78,7 +79,8 @@
   }
   
   .results {
-    margin-top: 10px;
+    margin-top: 0px;
+    margin: 0;
   }
   
   /* Lista de modelos */

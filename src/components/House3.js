@@ -89,7 +89,7 @@ const House2 = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.cabezal}>
+      {!selectedModel && <div className={styles.cabezal}>
       <div className={styles.cabezalTitle}>
         <h2 className={styles.cabezalh2} >INGENIERIA LINEA BLANCA</h2>
         <h2  className={styles.cabezalh2}>TECHNICAL SUPPORT SEM-S</h2>
@@ -126,7 +126,7 @@ const House2 = () => {
       </div>
       <p className={styles.anuncio}>Los modelos aún se están agregando. En esta sección podrá buscar por el modelo, categoría y tipo. Si aún no aparece el modelo que necesita, envíe su modelo y cuál es su duda al buzon de abajo.</p>
       <Link to='/búzon' className={styles.volver}>Búzon</Link>
-       </div>
+       </div>}
       <div className={styles.results}>
         {loading && <div>Cargando...</div>}
         {error && <div>Error: {error.message}</div>}

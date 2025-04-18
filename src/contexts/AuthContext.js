@@ -6,8 +6,9 @@ import {
   browserLocalPersistence, 
   onAuthStateChanged, 
   signInWithEmailAndPassword, 
-  signOut 
+  signOut
 } from 'firebase/auth';
+
 
 const AuthContext = createContext();
 
