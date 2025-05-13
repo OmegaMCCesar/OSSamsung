@@ -42,6 +42,14 @@
   align-items: center;
 }
 
+.filters2 {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+}
+
 .searchInput {
   padding: 8px 12px;
   font-size: 14px;
@@ -259,6 +267,17 @@
     text-decoration: none;
     border-radius: 8px;
     transition: background-color 0.3s;
+  }
+
+  .reiniciar{
+    background-color: #007acc;
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    width: 50%;
   }
   
   /* Media queries para diseño responsivo */
