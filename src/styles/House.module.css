@@ -1,3 +1,10 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 /* Estilos generales */
 .container {
   display: flex;
@@ -5,11 +12,13 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-width: 1024px;
   min-height: 100vh;
+  margin: 0 auto;
   background-color: #000;
   color: #fff;
   font-family: Arial, sans-serif;
-  padding: 2vh;
+  padding: 2vh 4vw;
 }
 
 /* Encabezado y controles */
@@ -18,35 +27,39 @@
   flex-direction: column;
   align-items: center;
   background-color: #111;
-  padding: 2vh;
+  padding: 2vh 3vw;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-  width: 90%;
+  width: 100%;
   text-align: center;
 }
 
-h2{
-  margin: 1vh 2vh;
+h2 {
+  margin: 1vh 0;
+  font-size: 1.5rem;
 }
 
-.error{
+.error {
   color: #ff0000;
   font-weight: bold;
-  margin: 1vh 2vh;
-} 
-.success{
-  color: #00ff00;
-  font-weight: bold;
-  margin: 1vh 2vh;
+  margin: 1vh 0;
 }
 
-.cabezalh2{
+.success {
+  color: #00ff00;
+  font-weight: bold;
+  margin: 1vh 0;
+}
+
+.cabezalh2 {
   color: #ccc;
 }
-.cabezalTitle{
+
+.cabezalTitle {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 /* Controles (filtros, búsqueda) */
@@ -59,23 +72,24 @@ h2{
   width: 100%;
 }
 
-.search {
+.search,
+.filter {
   padding: 1vh;
   border: 1px solid #fff;
   background: transparent;
   color: #fff;
   border-radius: 5px;
   transition: 0.3s;
+  font-size: 1rem;
 }
 
-.filter{
-  color: rgb(255, 255, 255);
+.filter {
   background-color: transparent;
   padding: 0.5vh;
   border-radius: 1vh;
 }
 
-option{
+option {
   background-color: #000;
   color: white;
 }
@@ -84,7 +98,8 @@ option{
   color: #fdf3f3d8;
 }
 
-.search:focus, .filter:focus {
+.search:focus,
+.filter:focus {
   border-color: #ccc;
   outline: none;
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
@@ -108,6 +123,7 @@ option{
   padding: 1vh 2vh;
   transition: background 0.3s, color 0.3s;
   font-weight: bold;
+  font-size: 1rem;
 }
 
 .button:hover {
@@ -122,18 +138,20 @@ option{
   justify-content: center;
   gap: 15px;
   margin-top: 20px;
-  width: 90%;
+  width: 100%;
 }
 
 /* Tarjetas de productos */
-.containerCard{
+.containerCard {
   background-color: white;
-  padding: 5vh 2vh;
+  padding: 2vh 2vw;
   border-radius: 2vh;
+  width: 100%;
 }
 
 .card {
-  width: 200px;
+  width: 100%;
+  max-width: 240px;
   cursor: pointer;
   padding: 15px;
   border: 1px solid #fff;
@@ -149,32 +167,52 @@ option{
 }
 
 .image {
-  width: 80%;
+  width: 100%;
+  height: auto;
   max-height: 180px;
+  object-fit: contain;
   border-radius: 5px;
 }
 
-/* Configuración para tabletas */
+/* Media queries */
 @media (max-width: 768px) {
-  .card {
-    width: 45%;
-  }
-}
-
-/* Configuración para celulares */
-@media (max-width: 480px) {
   .container {
-    padding: 1vh;
-  }
-
-  .grid {
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
+    padding: 2vh 3vw;
   }
 
   .card {
-    width: 80%;
+    max-width: 45%;
+  }
+
+  .button {
+    font-size: 0.9rem;
+    padding: 0.8vh 1.5vh;
   }
 }
 
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .search,
+  .filter {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    gap: 1vh;
+  }
+}

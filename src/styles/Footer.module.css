@@ -1,8 +1,42 @@
-footer{
-    display: flex;
-    justify-content: space-evenly;
+footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vh 4vw;
+  background-color: #333;
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0.5vh 1vw;
+  flex: 1 1 100%;
+}
+
+footer a {
+  color: #4fc3f7;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo: móviles */
+@media (max-width: 600px) {
+  footer {
+    flex-direction: column;
     align-items: center;
-    height: 80px;
-    background-color: #333;
-    color: hsl(0, 0%, 100%);
+    text-align: center;
+    padding: 3vh 5vw;
+    font-size: 0.85rem;
+  }
+
+  footer p {
+    flex: 1 1 auto;
+    margin: 0.4vh 0;
+  }
 }
