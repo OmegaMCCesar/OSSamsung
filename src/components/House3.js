@@ -33,7 +33,7 @@ const House2 = () => {
 
   // Hardcoded list of valid ASC codes (Consider fetching this from Firebase if it grows large)
   const validAscCodes = useMemo(() => [
-    '1401501', '4907726',
+    'Techsup','1401501', '4907726',
     '1658952', '1658994', '1659040', '4301958', '1659075', '1659136', '1729840', '1729975', '1729981', '1730172', '1730213', '1730257', '3453191', '2485007', '1730369', '3329308', '3490802', '3350595', '3375393', '3188990', '3329209', '3403522', '3404483', '3441335', '2277262', '3456937', '3464868', '3465902', '3467737', '3491791', '3861676', '6420071', '3903559', '4156881', '4156884', '4156883', '4160663', '4204348', '4243700', '4254175', '4271992', '3887111', '4292179', '4366954', '4375230', '4377174', '4789474', '4789476', '4894172', '4906330', '4923659', '4923680', '4932655', '4939874', '4953466', '4953467', '4962883', '4979868', '5777171', '5777172', '5779775', '5785173', '5788233', '5791986', '5798519', '5930135', '5939508', '5944496', '5949511', '5954013', '5968133', '5978055', '6423092', '6423093', '6423094', '5981427', '5984693', '5995041', '6421187', '6420072', '5999767', '6078654', '6082798', '4220824', '6162465', '4769819', '6205424', '6216903', '3491830', '6266448', '3191645', '5283007', '3865192', '2484362', '5288709', '6288721', '6288722', '6428335', '8334950', '8381572', '8395034', '9216816', '2470144','Cessoss','Sariwis'
   ], []);
 
@@ -455,15 +455,7 @@ const House2 = () => {
 
           {/* Search and Category Filters */}
           <div className={styles.filters}>
-             <Link className={styles.volverButton} to="/">volver</Link> {/* Changed class name */}
-            <input
-              type="text"
-              className={styles.searchInput}
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Buscar modelo"
-            />
-            <select
+             <select
               onChange={(e) => setCategory(e.target.value)}
               value={category}
               className={styles.categorySelect}
@@ -480,16 +472,24 @@ const House2 = () => {
               <option value="DW">DW</option>
               <option value="AIR DRESSER">AIR DRESSER</option>
             </select>
+            <Link to='/búzon' className={styles.buzonButton}>Búzon</Link> {/* Changed class name */}
+             <Link className={styles.volverButton} to="/">volver</Link> {/* Changed class name */}
+            <input
+              type="text"
+              className={styles.searchInput}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="Buscar modelo"
+            />
           </div>
 
           {/* Buzon Link */}
-          <Link to='/búzon' className={styles.buzonButton}>Búzon</Link> {/* Changed class name */}
 
           {/* ASC Code Input and Reset */}
           <div className={styles.ascCodeInputContainer}> {/* New container class */}
             <input
-              className={`${styles.searchInput} ${!isAscCodeValid && ascCode ? styles.inputInvalid : ''}`} 
-              placeholder="Ingresa código de centro de servicio"
+              className={`${styles.searchInputAsc} ${!isAscCodeValid && ascCode ? styles.inputInvalid : ''}`} 
+              placeholder="Ingresa código de centro de servici aqui"
               type="text"
               value={ascCode}
               onChange={(e) => setAscCode(e.target.value)}
