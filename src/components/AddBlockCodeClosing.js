@@ -221,6 +221,7 @@ const AddBlockCodeClosing = () => {
           <option value="VACUM">VACUM</option>
           <option value="DW">DW</option>
           <option value="AIR DRESSER">AIR DRESSER</option>
+          <option value="NK">NK</option>
         </select>
         {Object.keys(formData).map((key) =>
           key !== 'category' ? (
